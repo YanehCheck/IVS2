@@ -20,10 +20,10 @@ PŘIDĚLENÍ ÚKOLŮ
 
 všichni - Návrh architektury, Refactoring, Programová dokumentace, Integrace vyvýjeních součástí
 
-xpomik01 - Instalátor, Profiling, MakeFile
-xcechm13 - GUI, GUI mock-up, README
+xpomik01 - Instalátor, Profiling, MakeFile, Parser matematických výrazů
+xcechm13 - GUI, GUI mock-up, README, Parser matematických výrazů
 xsalon02 - Unit Testy, Uživatelská dokumentace
-xjanec36 - Matematická knihovna, Business logic kalkulačky
+xjanec36 - Matematická knihovna, Struktura a logika kalkulačky
 
 KOMUNIKACE
 
