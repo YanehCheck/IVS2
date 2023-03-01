@@ -71,5 +71,45 @@ namespace MathLib {
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Finds the factorial of a specified number. Number has to be non negative 
+        /// </summary>
+        /// <param name="n"> Integer. </param>
+        /// <returns>
+        /// The factorial of <paramref name="n">n</paramref>.
+        /// </returns>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="n">n</paramref> is negative.</exception>
+        public static int Factorial(int n) 
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /// <summary>
+        /// Raises number to specified power. Exponent has to be non negative.
+        /// </summary>
+        /// <param name="b"> Base. </param>
+        /// <param name="n"> Exponent. </param>
+        /// <returns>
+        /// <paramref name="n">n</paramref>th power of <paramref name="b">b</paramref>.
+        /// </returns>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="n">n</paramref> is negative.</exception>
+        public static T Pow<T>(T b, int n) where T : INumber<T> {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Finds the specified root of a number. Radicand has to be non negative,
+        /// </summary>
+        /// <param name="n"> Index. </param>
+        /// <param name="x"> Radicand. </param>
+        /// <returns>
+        /// <paramref name="n">n</paramref>th root of <paramref name="x">x</paramref>.
+        /// </returns>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="x">x</paramref> is negative.</exception>
+        public static T Root<T>(T x, T n) where T : INumber<T> {
+            throw new NotImplementedException();
+        }
     }
 }
