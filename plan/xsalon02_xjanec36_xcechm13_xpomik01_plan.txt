@@ -18,7 +18,7 @@ REFACTORING A FINÁLNÍ ÚPRAVY 22/04/2023
 
 PŘIDĚLENÍ ÚKOLŮ
 
-všichni - Návrh architektury, Refactoring, Programová dokumentace
+všichni - Návrh architektury, Refactoring, Programová dokumentace, Integrace vyvýjeních součástí
 
 xpomik01 - Instalátor, Profiling, MakeFile
 xcechm13 - GUI, GUI mock-up, README
