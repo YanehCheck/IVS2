@@ -4,14 +4,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorDesktopUI", "CalculatorDesktopUI\CalculatorDesktopUI.csproj", "{A069F9C5-BD82-40B5-804E-CA5A5E0C5178}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8842FEA7-3A47-49B2-9608-3B60BDA2D7D5} = {8842FEA7-3A47-49B2-9608-3B60BDA2D7D5}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorModel", "CalculatorModel\CalculatorModel.csproj", "{8842FEA7-3A47-49B2-9608-3B60BDA2D7D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorModel", "CalculatorModel\CalculatorModel.csproj", "{8842FEA7-3A47-49B2-9608-3B60BDA2D7D5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6BEB5870-B3FA-408E-A51B-A5AA8A655E0D} = {6BEB5870-B3FA-408E-A51B-A5AA8A655E0D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Profiler", "Profiler\Profiler.csproj", "{5862C000-788D-4FDA-B86D-41268117FFA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Profiler", "Profiler\Profiler.csproj", "{5862C000-788D-4FDA-B86D-41268117FFA1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6BEB5870-B3FA-408E-A51B-A5AA8A655E0D} = {6BEB5870-B3FA-408E-A51B-A5AA8A655E0D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib", "MathLib\MathLib.csproj", "{6BEB5870-B3FA-408E-A51B-A5AA8A655E0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathLib", "MathLib\MathLib.csproj", "{6BEB5870-B3FA-408E-A51B-A5AA8A655E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLibUnitTests", "MathLibUnitTests\MathLibUnitTests.csproj", "{5858105A-9B3C-4306-951F-87DFAA435044}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathLibUnitTests", "MathLibUnitTests\MathLibUnitTests.csproj", "{5858105A-9B3C-4306-951F-87DFAA435044}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6BEB5870-B3FA-408E-A51B-A5AA8A655E0D} = {6BEB5870-B3FA-408E-A51B-A5AA8A655E0D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
