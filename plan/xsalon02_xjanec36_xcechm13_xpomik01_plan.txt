@@ -1,1 +1,40 @@
-// TODO
+TERMÍNY
+
+NÁVRH ARCHITEKTURY - 08/03/2023
+README - 08/03/2023
+ROZHRANÍ MATEMATICKÉ KNIHOVNY - 08/03/2023
+UNIT TESTY MATEMATICKÉ KNIHOVNY - 12/03/2023
+IMPLEMENTACE MATEMATICKÉ KNIHOVNY - 15/03/2023
+NÁVRH GUI (MAKETA) 15/03/2023
+LOGIKA KALKULAČKY - 20/03/2023
+IMPLEMENTACE GUI - 10/04/2023
+PROFILING - 10/04/2023
+MAKEFILE - 18/04/2023
+GUI MOCK-UP - 18/04/2023
+UŽIVATELSKÁ DOKUMENTACE - 18/04/2023
+PROGRAMOVÁ DOKUMENTACE - 18/04/2023
+INSTALÁTOR - 18/04/2023
+REFACTORING A FINÁLNÍ ÚPRAVY 22/04/2023
+
+PŘIDĚLENÍ ÚKOLŮ
+
+všichni - Návrh architektury, Refactoring, Programová dokumentace
+
+xpomik01 - Instalátor, Profiling, MakeFile
+xcechm13 - GUI, GUI mock-up, README
+xsalon02 - Unit Testy, Uživatelská dokumentace
+xjanec36 - Matematická knihovna, Business logic kalkulačky
+
+KOMUNIKACE
+
+Převážně discord
+- Nutná odpověď do 2 dnů
+- Různá vlákna pro jednotlivé úkoly projektu
+- Na každé schůzce je domluven termín další schůzky, který vycházi ze stanovených orientačních termínů
+
+SPRÁVA VERZÍ A HOSTING
+
+git + github.com
+Název repozitáře: YanehCheck/IVS2
+Na email ivs kontroly byl poslán odkaz pro přístup k repozitáři.
+
