@@ -1,5 +1,7 @@
-﻿namespace MathParser {
-    public class Parser {
+﻿namespace MathParser 
+{
+    public class Parser 
+    {
 
     }
 }

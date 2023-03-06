@@ -1,5 +1,7 @@
-﻿namespace CalculatorModel {
-    public class Calculator {
+﻿namespace CalculatorModel 
+{
+    public class Calculator 
+    {
 
     }
 }

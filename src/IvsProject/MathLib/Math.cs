@@ -95,7 +95,8 @@ namespace MathLib {
         /// <paramref name="n">n</paramref>th power of <paramref name="b">b</paramref>.
         /// </returns>
         /// <exception cref="ArgumentException"> Thrown when <paramref name="n">n</paramref> is negative.</exception>
-        public static T Pow<T>(T b, int n) where T : INumber<T> {
+        public static T Pow<T>(T b, int n) where T : INumber<T> 
+        {
             throw new NotImplementedException();
         }
 
@@ -108,7 +109,8 @@ namespace MathLib {
         /// <paramref name="n">n</paramref>th root of <paramref name="x">x</paramref>.
         /// </returns>
         /// <exception cref="ArgumentException"> Thrown when <paramref name="x">x</paramref> is negative.</exception>
-        public static T Root<T>(T x, T n) where T : INumber<T> {
+        public static T Root<T>(T x, T n) where T : INumber<T> 
+        {
             throw new NotImplementedException();
         }
     }
