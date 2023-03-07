@@ -2,6 +2,9 @@
 
 namespace CalculatorModel 
 {
+    /// <summary>
+    /// Used to calculate mathematical expression.
+    /// </summary>
     public class Calculator 
     {
         /// <summary>
