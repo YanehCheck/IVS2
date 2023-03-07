@@ -1,4 +1,6 @@
-﻿namespace MathParser {
-    internal class StackItem {
+﻿namespace MathParser 
+{
+    internal class StackItem 
+    {
     }
 }
