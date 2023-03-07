@@ -21,8 +21,18 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet restore ./src/IvsProject/IvsProject.sln
+    - name: Build Math Library
+      run: dotnet build --no-restore ./src/IvsProject/MathLib/MathLib.csproj
+    - name: Build Math Parser
+      run: dotnet build --no-restore ./src/IvsProject/MathParser/MathParser.csproj
+    - name: Build Calculator Model
+      run: dotnet build --no-restore ./src/IvsProject/CalculatorModel/CalculatorModel.csproj
+    - name: Build UI
+      run: dotnet build --no-restore ./src/IvsProject/CalculatorDesktopUI/CalculatorDesktopUI.csproj
+    - name: Build Profiler
+      run: dotnet build --no-restore ./src/IvsProject/Profiler/Profiler.csproj
+    - name: Build Math Library Tests
+      run: dotnet build --no-restore ./src/IvsProject/MathLibUnitTests/MathLibUnitTests.csproj
+    - name: Run Math Library Tests
+      run: dotnet test --no-build --verbosity normal ./src/IvsProject/MathLibUnitTests/MathLibUnitTests.csproj
