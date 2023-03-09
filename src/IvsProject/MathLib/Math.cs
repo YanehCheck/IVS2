@@ -11,7 +11,7 @@ namespace MathLib {
         /// <param name="leftOperand"> Addend. </param>
         /// <param name="rightOperand"> Addend. </param>
         /// <returns>
-        /// The sum of <paramref name="leftOperand">leftOperand</paramref> and <paramref name="rightOperand">rightOperand</paramref>.
+        /// The sum of <paramref name="leftOperand"></paramref> and <paramref name="rightOperand"></paramref>.
         /// </returns>
         public static T Add<T>(T leftOperand, T rightOperand) where T : INumber<T>
         {
@@ -24,7 +24,7 @@ namespace MathLib {
         /// <param name="leftOperand"> Minuend. </param>
         /// <param name="rightOperand"> Subtrahend. </param>
         /// <returns>
-        /// The difference after subtracting <paramref name="rightOperand">rightOperand</paramref> from <paramref name="leftOperand">leftOperand</paramref>.
+        /// The difference after subtracting <paramref name="rightOperand"></paramref> from <paramref name="leftOperand"></paramref>.
         /// </returns>
         public static T Subtract<T>(T leftOperand, T rightOperand) where T : INumber<T> 
         {
@@ -37,7 +37,7 @@ namespace MathLib {
         /// <param name="leftOperand"> Multiplier. </param>
         /// <param name="rightOperand"> Multiplicand. </param>
         /// <returns>
-        /// The product after multiplying <paramref name="leftOperand">leftOperand</paramref> with <paramref name="rightOperand">rightOperand</paramref>.
+        /// The product after multiplying <paramref name="leftOperand"></paramref> with <paramref name="rightOperand"></paramref>.
         /// </returns>
         public static T Multiply<T>(T leftOperand, T rightOperand) where T : INumber<T> 
         {
@@ -64,9 +64,9 @@ namespace MathLib {
         /// <param name="leftOperand"> Dividend. </param>
         /// <param name="rightOperand"> Divisor. </param>
         /// <returns>
-        /// The remainder after dividing <paramref name="leftOperand">leftOperand</paramref> by <paramref name="rightOperand">rightOperand</paramref>.
+        /// The remainder after dividing <paramref name="leftOperand"></paramref> by <paramref name="rightOperand"></paramref>.
         /// </returns>
-        /// <exception cref="DivideByZeroException"> Thrown when the <paramref name="rightOperand">rightOperand</paramref> is zero.</exception>
+        /// <exception cref="DivideByZeroException"> Thrown when the <paramref name="rightOperand"></paramref> is zero.</exception>
         public static T Modulo<T>(T leftOperand, T rightOperand) where T : INumber<T> 
         {
             throw new NotImplementedException();
@@ -77,9 +77,9 @@ namespace MathLib {
         /// </summary>
         /// <param name="n"> Integer. </param>
         /// <returns>
-        /// The factorial of <paramref name="n">n</paramref>.
+        /// The factorial of <paramref name="n"></paramref>.
         /// </returns>
-        /// <exception cref="ArgumentException"> Thrown when <paramref name="n">n</paramref> is negative.</exception>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="n"></paramref> is negative.</exception>
         public static int Factorial(int n) 
         {
             throw new NotImplementedException();
@@ -92,9 +92,9 @@ namespace MathLib {
         /// <param name="b"> Base. </param>
         /// <param name="n"> Exponent. </param>
         /// <returns>
-        /// <paramref name="n">n</paramref>th power of <paramref name="b">b</paramref>.
+        /// <paramref name="n"></paramref>th power of <paramref name="b"></paramref>.
         /// </returns>
-        /// <exception cref="ArgumentException"> Thrown when <paramref name="n">n</paramref> is negative.</exception>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="n"></paramref> is negative.</exception>
         public static T Pow<T>(T b, int n) where T : INumber<T> 
         {
             throw new NotImplementedException();
@@ -106,9 +106,9 @@ namespace MathLib {
         /// <param name="n"> Index. </param>
         /// <param name="x"> Radicand. </param>
         /// <returns>
-        /// <paramref name="n">n</paramref>th root of <paramref name="x">x</paramref>.
+        /// <paramref name="n"></paramref>th root of <paramref name="x"></paramref>.
         /// </returns>
-        /// <exception cref="ArgumentException"> Thrown when <paramref name="x">x</paramref> is negative.</exception>
+        /// <exception cref="ArgumentException"> Thrown when <paramref name="x"></paramref> is negative.</exception>
         public static T Root<T>(T x, T n) where T : INumber<T> 
         {
             throw new NotImplementedException();
