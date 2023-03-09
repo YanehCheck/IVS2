@@ -21,5 +21,26 @@ namespace MathLibUnitTests
          * ------------------------------------------------------------------------
          * Also do not forget to delete this :P
          */
+
+        [Theory]
+        [InlineData(0, 0, 0)]
+        [InlineData(2, 0, 2)]
+        [InlineData(0, 2, 2)]
+        [InlineData(1, 2, 3)]
+        [InlineData(-1, -2, -3)]
+        [InlineData(1, -2, -1)]
+        [InlineData(-1, 2, 1)]
+        [InlineData(10000, 20000, 30000)]
+        [InlineData(-10000, -20000, -30000)]
+        [InlineData(10000, -20000, -10000)]
+        [InlineData(-10000, 20000, 10000)]
+        [InlineData(Int32.MaxValue, 1, Int32.MaxValue)]
+        [InlineData(Int32.MinValue, -1, Int32.MinValue)]
+        public void Add_Int32Addends_ReturnsSum(Int32 leftOperand, Int32 rightOperand, Int32 expectedResult)
+        {
+            Int32 result = Math.Add(leftOperand, rightOperand);
+
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
