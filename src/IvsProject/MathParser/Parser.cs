@@ -104,7 +104,7 @@ namespace MathParser
             {
                 return new ParseResult(_result, true);
             }
-            if (stack.GetStackLen() < 2)
+            if (stack.GetStackLength() < 2)
             {
                 return new ParseResult(_result, true);
             }

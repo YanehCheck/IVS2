@@ -13,15 +13,15 @@ namespace MathParser
         /// <summary>
         /// List of <see cref="StackItem"/> 
         /// </summary>
-        private List<StackItem> _stack;
+        private readonly List<StackItem> stack;
 
         /// <summary>
         /// Creates a new list of <see cref="StackItem"/>.
         /// </summary>
         public Stack()
         {
-            _stack = new List<StackItem>();
-            _stack.Add(new StackItem("$", 0));
+            stack = new List<StackItem>();
+            stack.Add(new StackItem("$", 0));
         }
 
         /// <summary>
@@ -30,11 +30,11 @@ namespace MathParser
         /// <returns> <see cref="StackItem"/> </returns>
         public StackItem GetLastTerminal()
         {
-            for (var i = _stack.Count - 1; i >= 0; i--)
+            for (var i = stack.Count - 1; i >= 0; i--)
             {
-                if (_stack[i].GetItemType() == StackItemType.Terminal)
+                if (stack[i].GetItemType() == StackItemType.Terminal)
                 {
-                    return _stack[i];
+                    return stack[i];
                 }
             }
 
@@ -47,9 +47,9 @@ namespace MathParser
         /// <returns> <see cref="int"/> </returns>
         public int GetLastTerminalIndex()
         {
-            for (var i = _stack.Count - 1; i >= 0; i--)
+            for (var i = stack.Count - 1; i >= 0; i--)
             {
-                if (_stack[i].GetItemType() == StackItemType.Terminal)
+                if (stack[i].GetItemType() == StackItemType.Terminal)
                 {
                     return i;
                 }
@@ -64,7 +64,7 @@ namespace MathParser
         /// <param name="item"> Item to be inserted. </param>
         public void PushAfterLastTerminal(StackItem item)
         {
-            _stack.Insert(GetLastTerminalIndex() + 1, item);
+            stack.Insert(GetLastTerminalIndex() + 1, item);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace MathParser
         /// <param name="item"> Item to be inserted. </param>
         public void Push(StackItem item)
         {
-            _stack.Add(item);
+            stack.Add(item);
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace MathParser
         /// <returns> <see cref="StackItem"/> </returns>
         public StackItem Pop()
         {
-            StackItem item = _stack[^1];
-            _stack.RemoveAt(_stack.Count - 1);
+            StackItem item = stack[^1];
+            stack.RemoveAt(stack.Count - 1);
             return item;
         }
 
@@ -91,9 +91,9 @@ namespace MathParser
         /// Returns the element from the top of the stack.
         /// </summary>
         /// <returns> <see cref="StackItem"/> </returns>
-        public StackItem getTop()
+        public StackItem GetTop()
         {
-            return _stack[^1];
+            return stack[^1];
         }
 
         /// <summary>
@@ -102,9 +102,9 @@ namespace MathParser
         /// <returns> <see cref="bool"/> Whether the action was successful </returns>
         public bool CreateExpression()
         {
-            List<StackItem> items = new List<StackItem>();
+            var items = new List<StackItem>();
 
-            while (getTop().GetItemType() != StackItemType.Nonterminal)
+            while (GetTop().GetItemType() != StackItemType.Nonterminal)
             {
                 items.Add(Pop());
             }
@@ -221,9 +221,9 @@ namespace MathParser
         /// Returns the number of items on the stack.
         /// </summary>
         /// <returns> <see cref="int"/> </returns>
-        public int GetStackLen()
+        public int GetStackLength()
         {
-            return _stack.Count;
+            return stack.Count;
         }
 
     }

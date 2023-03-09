@@ -11,24 +11,24 @@ namespace MathParser
         /// <summary>
         /// A string representation of a mathematical expression.
         /// </summary>
-        private readonly string _expression;
+        private readonly string expression;
         /// <summary>
         /// The current position in the input expression.
         /// Then the current position in the token list.
         /// </summary>
-        private int _position;
+        private int position;
         /// <summary>
         /// Tokens list.
         /// </summary>
-        private List<string> _tokens;
+        private readonly List<string> tokens;
         /// <summary>
         /// Determines if $ has already been returned.
         /// </summary>
-        private bool _dollarReturned;
+        private bool dollarReturned;
         /// <summary>
         /// Determines if expression was empty.
         /// </summary>
-        private bool _emptyExpression;
+        private readonly bool emptyExpression;
 
         /// <summary>
         /// Initializes a new instance of <see cref="Scanner"/>.
@@ -36,55 +36,55 @@ namespace MathParser
         /// <param name="expression"></param>
         public Scanner(string expression)
         {
-            _position = 0;
-            _dollarReturned = false;
-            _emptyExpression = false;
-            _tokens = new List<string>(); ;
-            _expression = expression;
+            position = 0;
+            dollarReturned = false;
+            emptyExpression = false;
+            tokens = new List<string>();
+            this.expression = expression;
 
-            var token = ScannToken();
+            var token = ScanToken();
 
             while (token != "$")
             {
                 if (token == "_")
                 {
-                    _tokens = new List<string>();
+                    tokens = new List<string>();
                     return;
                 }
-                _tokens.Add(token);
-                token = ScannToken();
+                tokens.Add(token);
+                token = ScanToken();
             }
 
-            if (_tokens.Count == 0)
+            if (tokens.Count == 0)
             {
-                _emptyExpression = true;
+                emptyExpression = true;
             }
             else
             {
-                _position = 0;
-                _tokens = MergeTokens(_tokens);
+                position = 0;
+                tokens = MergeTokens(tokens);
             }
         }
 
         /// <summary>
-        /// Returns the following token from <see cref="_expression"/>.
+        /// Returns the following token from <see cref="expression"/>.
         /// </summary>
         /// <returns> <see cref="string"/> </returns>
-        private string ScannToken()
+        private string ScanToken()
         {
-            while (_position < _expression.Length)
+            while (position < expression.Length)
             {
-                var match = Regex.Match(_expression.Substring(_position), @"^\s*(\d+(?:\.\d+)?)");
+                var match = Regex.Match(expression.Substring(position), @"^\s*(\d+(?:\.\d+)?)");
                 if (match.Success)
                 {
-                    _position += match.Length;
+                    position += match.Length;
                     return match.Groups[1].ToString();
                 }
 
-                match = Regex.Match(_expression.Substring(_position), @"^\s*(\^|√|\*|/|\+|-|%|\(|\)|!)");
+                match = Regex.Match(expression.Substring(position), @"^\s*(\^|√|\*|/|\+|-|%|\(|\)|!)");
                 if (match.Success)
                 {
-                    _position += match.Length;
+                    position += match.Length;
                     return match.Groups[1].ToString();
                 }
 
@@ -178,22 +178,22 @@ namespace MathParser
         /// <returns> <see cref="string"/> </returns>
         public string GetNextToken()
         {
-            if (_emptyExpression)
+            if (emptyExpression)
             {
                 return "_";
             }
 
-            if (_dollarReturned)
+            if (dollarReturned)
             {
                 return "$";
             }
 
-            if (_position < _tokens.Count)
+            if (position < tokens.Count)
             {
-                return _tokens[_position++];
+                return tokens[position++];
             }
 
-            _dollarReturned = true;
+            dollarReturned = true;
             return "$";
         }
 
@@ -202,9 +202,9 @@ namespace MathParser
         /// </summary>
         public void PutLastTokenBack()
         {
-            if (_position > 0)
+            if (position > 0)
             {
-                _position--;
+                position--;
             }
         }
 
