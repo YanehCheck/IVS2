@@ -1,0 +1,40 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Install workloads
+      run: dotnet workload restore ./src/IvsProject/IvsProject.sln
+    - name: Restore dependencies
+      run: dotnet restore ./src/IvsProject/IvsProject.sln
+    - name: Build Math Library
+      run: dotnet build --no-restore ./src/IvsProject/MathLib/MathLib.csproj
+    - name: Build Math Parser
+      run: dotnet build --no-restore ./src/IvsProject/MathParser/MathParser.csproj
+    - name: Build Calculator Model
+      run: dotnet build --no-restore ./src/IvsProject/CalculatorModel/CalculatorModel.csproj
+    - name: Build UI
+      run: dotnet build --no-restore ./src/IvsProject/CalculatorDesktopUI/CalculatorDesktopUI.csproj
+    - name: Build Profiler
+      run: dotnet build --no-restore ./src/IvsProject/Profiler/Profiler.csproj
+    - name: Build Math Library Tests
+      run: dotnet build --no-restore ./src/IvsProject/MathLibUnitTests/MathLibUnitTests.csproj
+    - name: Run Math Library Tests
+      run: dotnet test --no-build --verbosity normal ./src/IvsProject/MathLibUnitTests/MathLibUnitTests.csproj

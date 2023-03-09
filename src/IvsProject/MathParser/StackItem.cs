@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using MathParser.Enums;
 
@@ -161,6 +161,5 @@ namespace MathParser {
         {
             return TerminalType;
         }
-
     }
 }

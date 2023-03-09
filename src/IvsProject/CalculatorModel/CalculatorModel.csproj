@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MathLib\MathLib.csproj" />
+    <ProjectReference Include="..\MathParser\MathParser.csproj" />
+  </ItemGroup>
+
 </Project>
