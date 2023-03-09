@@ -42,5 +42,19 @@ namespace MathLibUnitTests
 
             Assert.Equal(expectedResult, result);
         }
+
+        [Theory]
+        [InlineData(0, 0, 0)]
+        [InlineData(2, 0, 2)]
+        [InlineData(0, 2, 2)]
+        [InlineData(1, 2, 3)]
+        [InlineData(10000, 20000, 30000)]
+        [InlineData(UInt32.MaxValue, 1, UInt32.MaxValue)]
+        public void Add_UInt32Addends_ReturnsSum(UInt32 leftOperand, UInt32 rightOperand, UInt32 expectedResult)
+        {
+            UInt32 result = Math.Add(leftOperand, rightOperand);
+
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
