@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MathParser.Enums
 {
-    internal enum TerminalType
+    public enum TerminalType
     {
-        Terminal,
-        Nonterminal,
-        Expression
+        Operand,
+        Expression,
+        Else
     }
 }
