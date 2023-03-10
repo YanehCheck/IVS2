@@ -89,13 +89,34 @@ namespace MathLibUnitTests
         [InlineData(-10_000.4f, 20_000.2f, 9999.8f)]
         [InlineData(0.123_456_789f, 0.987_654_321f, 1.111_111_11f)]
         [InlineData(0.123_456_789f, -0.987_654_321f, -0.864_197_532f)]
-        [InlineData(Single.MinValue, -1f, Single.PositiveInfinity)]
-        [InlineData(Single.MaxValue, 1f, Single.NegativeInfinity)]
         public void Add_SingleAddends_ReturnsSum(Single leftOperand, Single rightOperand, Single expectedResult)
         {
             Single result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData(Single.MinValue, -1f)]
+        [InlineData(Single.MaxValue, 1f)]
+        public void Add_SingleAddends_ThrowsOverflowException(Single leftOperand, Single rightOperand)
+        {
+            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
+        }
+
+        [Theory]
+        [InlineData(Single.NaN, Single.NaN)]
+        [InlineData(Single.PositiveInfinity, Single.PositiveInfinity)]
+        [InlineData(Single.NegativeInfinity, Single.NegativeInfinity)]
+        [InlineData(Single.NaN, Single.PositiveInfinity)]
+        [InlineData(Single.NaN, Single.NegativeInfinity)]
+        [InlineData(Single.PositiveInfinity, Single.NegativeInfinity)]
+        [InlineData(Single.NaN, 1f)]
+        [InlineData(Single.PositiveInfinity, 1f)]
+        [InlineData(Single.NegativeInfinity, 1f)]
+        public void Add_SingleAddends_ThrowsNotFiniteNumberException(Single leftOperand, Single rightOperand)
+        {
+            Assert.Throws<NotFiniteNumberException>(() => Math.Add(leftOperand, rightOperand));
         }
 
         [Theory]
@@ -108,13 +129,34 @@ namespace MathLibUnitTests
         [InlineData(-10_000.4, 20_000.2, 9999.8)]
         [InlineData(0.123_456_789, 0.987_654_321, 1.111_111_11)]
         [InlineData(0.123_456_789, -0.987_654_321, -0.864_197_532)]
-        [InlineData(Double.MinValue, -1.0, Double.PositiveInfinity)]
-        [InlineData(Double.MaxValue, 1.0, Double.NegativeInfinity)]
         public void Add_DoubleAddends_ReturnsSum(Double leftOperand, Double rightOperand, Double expectedResult)
         {
             Double result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData(Double.MinValue, -1)]
+        [InlineData(Double.MaxValue, 1)]
+        public void Add_DoubleAddends_ThrowsOverflowException(Double leftOperand, Double rightOperand)
+        {
+            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
+        }
+
+        [Theory]
+        [InlineData(Double.NaN, Double.NaN)]
+        [InlineData(Double.PositiveInfinity, Double.PositiveInfinity)]
+        [InlineData(Double.NegativeInfinity, Double.NegativeInfinity)]
+        [InlineData(Double.NaN, Double.PositiveInfinity)]
+        [InlineData(Double.NaN, Double.NegativeInfinity)]
+        [InlineData(Double.PositiveInfinity, Double.NegativeInfinity)]
+        [InlineData(Double.NaN, 1)]
+        [InlineData(Double.PositiveInfinity, 1)]
+        [InlineData(Double.NegativeInfinity, 1)]
+        public void Add_DoubleAddends_ThrowsNotFiniteNumberException(Double leftOperand, Double rightOperand)
+        {
+            Assert.Throws<NotFiniteNumberException>(() => Math.Add(leftOperand, rightOperand));
         }
 
         [Theory]
