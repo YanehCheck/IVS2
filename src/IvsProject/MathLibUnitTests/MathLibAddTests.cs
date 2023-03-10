@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Math = MathLib.Math;
 
 namespace MathLibUnitTests
@@ -8,9 +7,6 @@ namespace MathLibUnitTests
     /// </summary>
     public class MathLibAddTests 
     {
-        private const Decimal DECIMAL_MAX_VALUE = 79_228_162_514_264_337_593_543_950_335m;
-        private const Decimal DECIMAL_MIN_VALUE = -79_228_162_514_264_337_593_543_950_335m;
-
         /// <summary>
         /// List of decimal test inputs that return sum.
         /// </summary>
@@ -32,8 +28,8 @@ namespace MathLibUnitTests
         /// </summary>
         public static IEnumerable<object[]> DecimalEdgeValues => new List<object[]>
         {
-            new object[] { DECIMAL_MAX_VALUE, 1m },
-            new object[] { DECIMAL_MIN_VALUE, -1m }
+            new object[] { Constants.DECIMAL_MAX_VALUE, 1m },
+            new object[] { Constants.DECIMAL_MIN_VALUE, -1m }
         };
 
         [Theory]
