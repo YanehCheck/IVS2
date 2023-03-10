@@ -7,6 +7,36 @@ namespace MathLibUnitTests
     /// </summary>
     public class MathLibSubtractTests
     {
+        /// <summary>
+        /// List of decimal test inputs that return difference.
+        /// </summary>
+        public static IEnumerable<object[]> DecimalValues => new List<object[]>
+        {
+            new object[] { 0m, 0m, 0m },
+            new object[] { 2.5m, 0m, 2.5m },
+            new object[] { 0m, 2.1m, -2.1m },
+            new object[] { 0m, -2.1m, 2.1m },
+            new object[] { 10_000.2m, 20_000.4m, -10_000.2m },
+            new object[] { -10_000.2m, -20_000.2m, 10_000.0m },
+            new object[] { 10_000.4m, -20_000.6m, 30_001.0m },
+            new object[] { -10_000.4m, 20_000.2m, -30_000.6m },
+            new object[] { 0.123_456_789m, -0.987_654_321m, 1.111_111_11m },
+            new object[] { 0.123_456_789m, 0.987_654_321m, -0.864_197_532m },
+            new object[] { -0.123_456_789m, -0.987_654_321m, 0.864_197_532m },
+            new object[] { -0.123_456_789m, 0.987_654_321m, -1.111_111_11m },
+            new object[] { Constants.DECIMAL_MIN_VALUE, -1m, Constants.DECIMAL_MIN_VALUE + 1m },
+            new object[] { Constants.DECIMAL_MAX_VALUE, 1m, Constants.DECIMAL_MAX_VALUE - 1m }
+        };
+
+        /// <summary>
+        /// List of decimal test inputs that should throw OverflowException.
+        /// </summary>
+        public static IEnumerable<object[]> DecimalEdgeValues => new List<object[]>
+        {
+            new object[] { Constants.DECIMAL_MAX_VALUE, -1m },
+            new object[] { Constants.DECIMAL_MIN_VALUE, 1m }
+        };
+
         [Theory]
         [InlineData(0, 0, 0)]
         [InlineData(2, 0, 2)]
@@ -104,6 +134,22 @@ namespace MathLibUnitTests
             Double result = Math.Subtract(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [MemberData(nameof(DecimalValues))]
+        public void Subtract_DecimalOperands_ReturnsDifference(Decimal leftOperand, Decimal rightOperand, Decimal expectedResult)
+        {
+            Decimal result = Math.Subtract(leftOperand, rightOperand);
+
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [MemberData(nameof(DecimalEdgeValues))]
+        public void Subtract_DecimalOperands_ThrowsOverflowException(Decimal leftOperand, Decimal rightOperand)
+        {
+            Assert.Throws<OverflowException>(() => Math.Subtract(leftOperand, rightOperand));
         }
     }
 }
