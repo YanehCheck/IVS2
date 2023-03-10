@@ -57,5 +57,53 @@ namespace MathLibUnitTests
         {
             Assert.Throws<OverflowException>(() => Math.Subtract(leftOperand, rightOperand));
         }
+
+        [Theory]
+        [InlineData(0.0f, 0.0f, 0.0f)]
+        [InlineData(2.5f, 0f, 2.5f)]
+        [InlineData(0f, 2.1f, -2.1f)]
+        [InlineData(0f, -2.1f, 2.1f)]
+        [InlineData(10_000.2f, 20_000.4f, -10_000.2f)]
+        [InlineData(-10_000.2f, -20_000.2f, 10_000.0f)]
+        [InlineData(10_000.4f, -20_000.6f, 30_001.0f)]
+        [InlineData(-10_000.4f, 20_000.2f, -30_000.6f)]
+        [InlineData(0.123_456_789f, -0.987_654_321f, 1.111_111_11f)]
+        [InlineData(0.123_456_789f, 0.987_654_321f, -0.864_197_532f)]
+        [InlineData(-0.123_456_789f, -0.987_654_321f, 0.864_197_532f)]
+        [InlineData(-0.123_456_789f, 0.987_654_321f, -1.111_111_11f)]
+        [InlineData(Single.MinValue, 1f, Single.NegativeInfinity)]
+        [InlineData(Single.MinValue, -1f, Single.MinValue + 1f)]
+        [InlineData(Single.MaxValue, 1f, Single.MaxValue - 1f)]
+        [InlineData(Single.MaxValue, -1f, Single.PositiveInfinity)]
+        public void Subtract_SingleOperands_ReturnsDifference(Single leftOperand, Single rightOperand, Single expectedResult)
+        {
+            Single result = Math.Subtract(leftOperand, rightOperand);
+
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData(0.0, 0.0, 0.0)]
+        [InlineData(2.5, 0, 2.5)]
+        [InlineData(0, 2.1, -2.1)]
+        [InlineData(0, -2.1, 2.1)]
+        [InlineData(10_000.2, 20_000.4, -10_000.2)]
+        [InlineData(-10_000.2, -20_000.2, 10_000.0)]
+        [InlineData(10_000.4, -20_000.6, 30_001.0)]
+        [InlineData(-10_000.4, 20_000.2, -30_000.6)]
+        [InlineData(0.123_456_789, -0.987_654_321, 1.111_111_11)]
+        [InlineData(0.123_456_789, 0.987_654_321, -0.864_197_532)]
+        [InlineData(-0.123_456_789, -0.987_654_321, 0.864_197_532)]
+        [InlineData(-0.123_456_789, 0.987_654_321, -1.111_111_11)]
+        [InlineData(Double.MinValue, 1, Double.NegativeInfinity)]
+        [InlineData(Double.MinValue, -1, Double.MinValue + 1)]
+        [InlineData(Double.MaxValue, 1, Double.MaxValue - 1)]
+        [InlineData(Double.MaxValue, -1, Double.PositiveInfinity)]
+        public void Subtract_DoubleOperands_ReturnsDifference(Double leftOperand, Double rightOperand, Double expectedResult)
+        {
+            Double result = Math.Subtract(leftOperand, rightOperand);
+
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
