@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Math = MathLib.Math;
 
 namespace MathLibUnitTests
@@ -7,6 +8,18 @@ namespace MathLibUnitTests
     /// </summary>
     public class MathLibAddTests 
     {
+        private const Decimal DECIMAL_MAX_VALUE = 79228162514264337593543950335m;
+        private const Decimal DECIMAL_MIN_VALUE = -79228162514264337593543950335m;
+
+        /// <summary>
+        /// List of decimal test inputs that should throw OverflowException.
+        /// </summary>
+        public static IEnumerable<object[]> DecimalEdgeValues => new List<object[]>
+        {
+            new object[] { DECIMAL_MAX_VALUE, 1 },
+            new object[] { DECIMAL_MIN_VALUE, -1 }
+        };
+
         [Theory]
         [InlineData(0, 0, 0)]
         [InlineData(2, 0, 2)]
@@ -102,13 +115,18 @@ namespace MathLibUnitTests
         [InlineData(-10000.4, 20000.2, 9999.8)]
         [InlineData(0.123456789, 0.987654321, 1.11111111)]
         [InlineData(0.123456789, -0.987654321, -0.864197532)]
-        [InlineData(-79228162514264337593543950335.0, -1.0, -79228162514264337593543950335.0)]
-        [InlineData(79228162514264337593543950335.0, 1.0, 79228162514264337593543950335.0)]
         public void Add_DecimalAddends_ReturnsSum(Decimal leftOperand, Decimal rightOperand, Decimal expectedResult)
         {
             Decimal result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [MemberData(nameof(DecimalEdgeValues))]
+        public void Add_DecimalAddends_ThrowsOverflowExeption(Decimal leftOperand, Decimal rightOperand)
+        {
+            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
         }
     }
 }
