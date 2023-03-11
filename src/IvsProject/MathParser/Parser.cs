@@ -152,7 +152,17 @@ namespace MathParser
             {
                 _result.Add("√");
             }
-            else if (e.GetRule() == 8 || e.GetRule() == 9 || e.GetRule() == 11)
+            else if (e.GetRule() == 8)
+            {
+                _result.Add("1");
+                _result.Add("*");
+            }
+            else if (e.GetRule() == 9)
+            {
+                _result.Add("-1");
+                _result.Add("*");
+            }
+            else if (e.GetRule() == 11)
             {
                 _result.Add(Convert.ToString(e.GetValue()).Replace(",", "."));
             }

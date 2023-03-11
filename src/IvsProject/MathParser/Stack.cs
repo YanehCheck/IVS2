@@ -202,8 +202,7 @@ namespace MathParser
                 else if (items[^1].GetSelf() == "(" && items[^3].GetSelf() == ")")
                 {
                     //System.Diagnostics.Debug.WriteLine("RULE 10");
-                    expression = new StackItem("E", 10);
-                    expression.SetLeft(items[^2]);
+                    expression = items[^2];
                 }
                 else
                 {
