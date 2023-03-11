@@ -89,7 +89,7 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(0.0f, 0.0f, 0.0f)]
+        [InlineData(0f, 0f, 0f)]
         [InlineData(2.5f, 0f, 2.5f)]
         [InlineData(0f, 2.1f, -2.1f)]
         [InlineData(0f, -2.1f, 2.1f)]
@@ -134,20 +134,20 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(0.0, 0.0, 0.0)]
-        [InlineData(2.5, 0, 2.5)]
-        [InlineData(0, 2.1, -2.1)]
-        [InlineData(0, -2.1, 2.1)]
-        [InlineData(10_000.2, 20_000.4, -10_000.2)]
-        [InlineData(-10_000.2, -20_000.2, 10_000.0)]
-        [InlineData(10_000.4, -20_000.6, 30_001.0)]
-        [InlineData(-10_000.4, 20_000.2, -30_000.6)]
-        [InlineData(0.123_456_789, -0.987_654_321, 1.111_111_11)]
-        [InlineData(0.123_456_789, 0.987_654_321, -0.864_197_532)]
-        [InlineData(-0.123_456_789, -0.987_654_321, 0.864_197_532)]
-        [InlineData(-0.123_456_789, 0.987_654_321, -1.111_111_11)]
-        [InlineData(Double.MinValue, -1, Double.MinValue + 1)]
-        [InlineData(Double.MaxValue, 1, Double.MaxValue - 1)]
+        [InlineData(0d, 0d, 0d)]
+        [InlineData(2.5d, 0d, 2.5d)]
+        [InlineData(0d, 2.1d, -2.1d)]
+        [InlineData(0d, -2.1d, 2.1d)]
+        [InlineData(10_000.2d, 20_000.4d, -10_000.2d)]
+        [InlineData(-10_000.2d, -20_000.2d, 10_000.0d)]
+        [InlineData(10_000.4d, -20_000.6d, 30_001.0d)]
+        [InlineData(-10_000.4d, 20_000.2d, -30_000.6d)]
+        [InlineData(0.123_456_789d, -0.987_654_321d, 1.111_111_11d)]
+        [InlineData(0.123_456_789d, 0.987_654_321d, -0.864_197_532d)]
+        [InlineData(-0.123_456_789d, -0.987_654_321d, 0.864_197_532d)]
+        [InlineData(-0.123_456_789d, 0.987_654_321d, -1.111_111_11d)]
+        [InlineData(Double.MinValue, -1d, Double.MinValue + 1d)]
+        [InlineData(Double.MaxValue, 1d, Double.MaxValue - 1d)]
         public void Subtract_DoubleOperands_ReturnsDifference(Double leftOperand, Double rightOperand, Double expectedResult)
         {
             Double result = Math.Subtract(leftOperand, rightOperand);
@@ -156,8 +156,8 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(Double.MinValue, 1)]
-        [InlineData(Double.MaxValue, -1)]
+        [InlineData(Double.MinValue, 1d)]
+        [InlineData(Double.MaxValue, -1d)]
         public void Subtract_DoubleOperands_ThrowsOverflowException(Double leftOperand, Double rightOperand)
         {
             Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
@@ -170,9 +170,9 @@ namespace MathLibUnitTests
         [InlineData(Double.NaN, Double.PositiveInfinity)]
         [InlineData(Double.NaN, Double.NegativeInfinity)]
         [InlineData(Double.PositiveInfinity, Double.NegativeInfinity)]
-        [InlineData(Double.NaN, 1)]
-        [InlineData(Double.PositiveInfinity, 1)]
-        [InlineData(Double.NegativeInfinity, 1)]
+        [InlineData(Double.NaN, 1d)]
+        [InlineData(Double.PositiveInfinity, 1d)]
+        [InlineData(Double.NegativeInfinity, 1d)]
         public void Subtract_DoubleOperands_ThrowsNotFiniteNumberException(Double leftOperand, Double rightOperand)
         {
             Assert.Throws<NotFiniteNumberException>(() => Math.Add(leftOperand, rightOperand));

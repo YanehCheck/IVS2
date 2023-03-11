@@ -165,20 +165,20 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(0, 2, 0)]
-        [InlineData(2, 1, 2)]
-        [InlineData(1, 2, 0.5)]
-        [InlineData(-1, -2, 0.5)]
-        [InlineData(1, -2, -0.5)]
-        [InlineData(-1, 2, -0.5)]
-        [InlineData(25, 5, 5)]
-        [InlineData(-25, -5, 5)]
-        [InlineData(25, -5, -5)]
-        [InlineData(-25, 5, -5)]
-        [InlineData(5.625, 2.25, 2.5)]
-        [InlineData(-5.625, -2.25, 2.5)]
-        [InlineData(5.625, -2.25, -2.5)]
-        [InlineData(-5.625, 2.25, -2.5)]
+        [InlineData(0d, 2d, 0d)]
+        [InlineData(2d, 1d, 2d)]
+        [InlineData(1d, 2d, 0.5d)]
+        [InlineData(-1d, -2d, 0.5d)]
+        [InlineData(1d, -2d, -0.5d)]
+        [InlineData(-1d, 2d, -0.5d)]
+        [InlineData(25d, 5d, 5d)]
+        [InlineData(-25d, -5d, 5d)]
+        [InlineData(25d, -5d, -5d)]
+        [InlineData(-25d, 5d, -5d)]
+        [InlineData(5.625d, 2.25d, 2.5d)]
+        [InlineData(-5.625d, -2.25d, 2.5d)]
+        [InlineData(5.625d, -2.25d, -2.5d)]
+        [InlineData(-5.625d, 2.25d, -2.5d)]
         public void Divide_DoubleOperands_ReturnsQuotient(Double leftOperand, Double rightOperand, Double expectedResult)
         {
             Double result = Math.Divide(leftOperand, rightOperand);
@@ -187,10 +187,10 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(Double.MinValue, 0.5)]
-        [InlineData(Double.MinValue, -0.5)]
-        [InlineData(Double.MaxValue, 0.5)]
-        [InlineData(Double.MaxValue, -0.5)]
+        [InlineData(Double.MinValue, 0.5d)]
+        [InlineData(Double.MinValue, -0.5d)]
+        [InlineData(Double.MaxValue, 0.5d)]
+        [InlineData(Double.MaxValue, -0.5d)]
         public void Divide_DoubleOperands_ThrowsOverflowException(Double leftOperand, Double rightOperand)
         {
             Assert.Throws<OverflowException>(() => Math.Divide(leftOperand, rightOperand));
@@ -203,18 +203,18 @@ namespace MathLibUnitTests
         [InlineData(Double.NaN, Double.PositiveInfinity)]
         [InlineData(Double.NaN, Double.NegativeInfinity)]
         [InlineData(Double.PositiveInfinity, Double.NegativeInfinity)]
-        [InlineData(Double.NaN, 1)]
-        [InlineData(Double.PositiveInfinity, 1)]
-        [InlineData(Double.NegativeInfinity, 1)]
+        [InlineData(Double.NaN, 1d)]
+        [InlineData(Double.PositiveInfinity, 1d)]
+        [InlineData(Double.NegativeInfinity, 1d)]
         public void Divide_DoubleOperands_ThrowsNotFiniteNumberException(Double leftOperand, Double rightOperand)
         {
             Assert.Throws<NotFiniteNumberException>(() => Math.Divide(leftOperand, rightOperand));
         }
 
         [Theory]
-        [InlineData(0, 0)]
-        [InlineData(1.5, 0)]
-        [InlineData(-1.5, 0)]
+        [InlineData(0d, 0d)]
+        [InlineData(1.5d, 0d)]
+        [InlineData(-1.5d, 0d)]
         public void Divide_DoubleOperands_ThrowsDivideByZeroException(Double leftOperand, Double rightOperand)
         {
             Assert.Throws<DivideByZeroException>(() => Math.Divide(leftOperand, rightOperand));

@@ -12,20 +12,20 @@ namespace MathLibUnitTests
         /// </summary>
         public static IEnumerable<object[]> DecimalValues => new List<object[]>
         {
-            new object[] { 0d, 2d, 0d },
-            new object[] { 2d, 1d, 0d },
-            new object[] { 1d, 2d, 1d },
-            new object[] { -1d, -2d, -1d },
-            new object[] { 1d, -2d, -1d },
-            new object[] { -1d, 2d, 1d },
-            new object[] { 25d, 5d, 0d },
-            new object[] { -25d, -5d, 0d },
-            new object[] { 25d, -5d, 0d },
-            new object[] { -25d, 5d, 0d },
-            new object[] { 5.625d, 2.25d, 1.125d },
-            new object[] { -5.625d, -2.25d, -1.125d },
-            new object[] { 5.625d, -2.25d, -1.125d },
-            new object[] { -5.625d, 2.25d, 1.125d }
+            new object[] { 0m, 2m, 0m },
+            new object[] { 2m, 1m, 0m },
+            new object[] { 1m, 2m, 1m },
+            new object[] { -1m, -2m, -1m },
+            new object[] { 1m, -2m, -1m },
+            new object[] { -1m, 2m, 1m },
+            new object[] { 25m, 5m, 0m },
+            new object[] { -25m, -5m, 0m },
+            new object[] { 25m, -5m, 0m },
+            new object[] { -25m, 5m, 0m },
+            new object[] { 5.625m, 2.25m, 1.125m },
+            new object[] { -5.625m, -2.25m, -1.125m },
+            new object[] { 5.625m, -2.25m, -1.125m },
+            new object[] { -5.625m, 2.25m, 1.125m }
         };
 
         /// <summary>

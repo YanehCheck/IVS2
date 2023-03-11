@@ -279,12 +279,12 @@ namespace MathLibUnitTests
         [InlineData(Double.NaN, Double.PositiveInfinity)]
         [InlineData(Double.NaN, Double.NegativeInfinity)]
         [InlineData(Double.PositiveInfinity, Double.NegativeInfinity)]
-        [InlineData(Double.NaN, 1f)]
-        [InlineData(Double.PositiveInfinity, 1f)]
-        [InlineData(Double.NegativeInfinity, 1f)]
-        [InlineData(1f, Double.NaN)]
-        [InlineData(1f, Double.PositiveInfinity)]
-        [InlineData(1f, Double.NegativeInfinity)]
+        [InlineData(Double.NaN, 1d)]
+        [InlineData(Double.PositiveInfinity, 1d)]
+        [InlineData(Double.NegativeInfinity, 1d)]
+        [InlineData(1d, Double.NaN)]
+        [InlineData(1d, Double.PositiveInfinity)]
+        [InlineData(1d, Double.NegativeInfinity)]
         public void Root_DoubleOperands_ThrowsNotFiniteNumberException(Double index, Double radicand)
         {
             Assert.Throws<NotFiniteNumberException>(() => Math.Root(index, radicand));

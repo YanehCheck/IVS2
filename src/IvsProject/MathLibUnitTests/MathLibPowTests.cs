@@ -101,21 +101,21 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(0, 0, 1)]
-        [InlineData(0, 1, 0)]
-        [InlineData(0, 2, 0)]
-        [InlineData(1, 0, 1)]
-        [InlineData(1, 1, 1)]
-        [InlineData(1, 2, 1)]
-        [InlineData(1, 3, 1)]
-        [InlineData(2, 0, 1)]
-        [InlineData(2, 1, 2)]
-        [InlineData(2, 2, 4)]
-        [InlineData(10, 0, 1)]
-        [InlineData(10, 1, 10)]
-        [InlineData(10, 2, 100)]
-        [InlineData(10, 9, 1_000_000_000)]
-        [InlineData(65_535, 2, 4_294_836_225)]
+        [InlineData(0u, 0, 1u)]
+        [InlineData(0u, 1, 0u)]
+        [InlineData(0u, 2, 0u)]
+        [InlineData(1u, 0, 1u)]
+        [InlineData(1u, 1, 1u)]
+        [InlineData(1u, 2, 1u)]
+        [InlineData(1u, 3, 1u)]
+        [InlineData(2u, 0, 1u)]
+        [InlineData(2u, 1, 2u)]
+        [InlineData(2u, 2, 4u)]
+        [InlineData(10u, 0, 1u)]
+        [InlineData(10u, 1, 10u)]
+        [InlineData(10u, 2, 100u)]
+        [InlineData(10u, 9, 1_000_000_000u)]
+        [InlineData(65_535u, 2, 4_294_836_225u)]
         public void Pow_UInt32Base_ReturnsPower(UInt32 baseNumber, Int32 exponent, UInt32 expectedResult)
         {
             UInt32 result = Math.Pow(baseNumber, exponent);
@@ -124,8 +124,8 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(10, 10)]
-        [InlineData(65_536, 2)]
+        [InlineData(10u, 10)]
+        [InlineData(65_536u, 2)]
         [InlineData(UInt32.MaxValue, 2)]
         public void Pow_UInt32Base_ThrowsOverflowException(UInt32 baseNumber, Int32 exponent)
         {
