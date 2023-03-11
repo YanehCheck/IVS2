@@ -8,7 +8,7 @@ namespace MathLibUnitTests
     public class MathLibMultiplyTests
     {
         /// <summary>
-        /// List of decimal test inputs that return difference.
+        /// List of decimal test inputs that return product.
         /// </summary>
         public static IEnumerable<object[]> DecimalValues => new List<object[]>
         {
@@ -54,6 +54,7 @@ namespace MathLibUnitTests
         }
 
         [Theory]
+        [InlineData(Int32.MinValue, -1)]
         [InlineData(Int32.MinValue, 2)]
         [InlineData(Int32.MinValue, -2)]
         [InlineData(Int32.MaxValue, 2)]
