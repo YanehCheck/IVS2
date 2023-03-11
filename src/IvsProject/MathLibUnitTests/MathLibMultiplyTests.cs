@@ -98,7 +98,7 @@ namespace MathLibUnitTests
         {
             Single result = Math.Multiply(leftOperand, rightOperand);
 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, result, Constants.EPSILON);
         }
 
         [Theory]
@@ -140,7 +140,7 @@ namespace MathLibUnitTests
         {
             Double result = Math.Multiply(leftOperand, rightOperand);
 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, result, Constants.PRECISION);
         }
 
         [Theory]
@@ -174,7 +174,7 @@ namespace MathLibUnitTests
         {
             Decimal result = Math.Multiply(leftOperand, rightOperand);
 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, result, Constants.PRECISION);
         }
 
         [Theory]

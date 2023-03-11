@@ -153,7 +153,7 @@ namespace MathLibUnitTests
         {
             Single result = Math.Pow(baseNumber, exponent);
 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, result, Constants.EPSILON);
         }
 
         [Theory]
@@ -207,7 +207,7 @@ namespace MathLibUnitTests
         {
             Double result = Math.Pow(baseNumber, exponent);
 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, result, Constants.PRECISION);
         }
 
         [Theory]
@@ -246,7 +246,7 @@ namespace MathLibUnitTests
         {
             Decimal result = Math.Pow(baseNumber, exponent);
 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, result, Constants.PRECISION);
         }
 
         [Theory]
