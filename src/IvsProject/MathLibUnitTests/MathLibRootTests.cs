@@ -30,7 +30,11 @@ namespace MathLibUnitTests
             new object[] { -0.5m, 2m, 0.25m },
             new object[] { 1m, 1.5m, 1.5m },
             new object[] { -1m, 1.25m, 0.8m },
-            new object[] { 2m, 110.25m, 10.5m }
+            new object[] { 2m, 110.25m, 10.5m },
+            new object[] { 1m, -4m, -4m },
+            new object[] { -1m, -4m, -0.25m },
+            new object[] { 0.5m, -4m, 16m },
+            new object[] { -0.5m, -4m, 0.0625m }
         };
 
         /// <summary>
@@ -66,8 +70,8 @@ namespace MathLibUnitTests
         /// </summary>
         public static IEnumerable<object[]> DecimalArgumentValues => new List<object[]>
         {
-            new object[] { 1m, -1m },
-            new object[] { -1m, -1m }
+            new object[] { 2m, -4m },
+            new object[] { -2m, -4m }
         };
 
         [Theory]
@@ -86,6 +90,8 @@ namespace MathLibUnitTests
         [InlineData(-2, 100, 0)]
         [InlineData(2, 100, 10)]
         [InlineData(3, 1_000, 10)]
+        [InlineData(1, -4, -4)]
+        [InlineData(-1, -4, 0)]
         public void Root_Int32Operands_ReturnsRoot(Int32 index, Int32 radicand, Int32 expectedResult)
         {
             Int32 result = Math.Root(index, radicand);
@@ -112,10 +118,10 @@ namespace MathLibUnitTests
             Assert.Throws<NotFiniteNumberException>(() => Math.Root(index, radicand));
         }
 
-        // radicand must be positive
+        // radicand is negative => index must be odd
         [Theory]
-        [InlineData(1, -1)]
-        [InlineData(-1, -1)]
+        [InlineData(2, -4)]
+        [InlineData(-2, -4)]
         public void Root_Int32Operands_ThrowsArgumentException(Int32 index, Int32 radicand)
         {
             Assert.Throws<ArgumentException>(() => Math.Root(index, radicand));
@@ -169,6 +175,10 @@ namespace MathLibUnitTests
         [InlineData(1f, 1.5f, 1.5f)]
         [InlineData(-1f, 1.25f, 0.8f)]
         [InlineData(2f, 110.25f, 10.5f)]
+        [InlineData(1f, -4f, -4f)]
+        [InlineData(-1f, -4f, -0.25f)]
+        [InlineData(0.5f, -4f, 16f)]
+        [InlineData(-0.5f, -4f, 0.0625f)]
         public void Root_SingleOperands_ReturnsRoot(Single index, Single radicand, Single expectedResult)
         {
             Single result = Math.Root(index, radicand);
@@ -215,10 +225,10 @@ namespace MathLibUnitTests
             Assert.Throws<NotFiniteNumberException>(() => Math.Root(index, radicand));
         }
 
-        // radicand must be positive
+        // radicand is negative => index must be odd
         [Theory]
-        [InlineData(1f, -1f)]
-        [InlineData(-1f, -1f)]
+        [InlineData(2f, -4f)]
+        [InlineData(-2f, -4f)]
         public void Root_SingleOperands_ThrowsArgumentException(Single index, Single radicand)
         {
             Assert.Throws<ArgumentException>(() => Math.Root(index, radicand));
@@ -244,6 +254,10 @@ namespace MathLibUnitTests
         [InlineData(1d, 1.5d, 1.5d)]
         [InlineData(-1d, 1.25d, 0.8d)]
         [InlineData(2d, 110.25d, 10.5d)]
+        [InlineData(1d, -4d, -4d)]
+        [InlineData(-1d, -4d, -0.25d)]
+        [InlineData(0.5d, -4d, 16d)]
+        [InlineData(-0.5d, -4d, 0.0625d)]
         public void Root_DoubleOperands_ReturnsRoot(Double index, Double radicand, Double expectedResult)
         {
             Double result = Math.Root(index, radicand);
@@ -290,10 +304,10 @@ namespace MathLibUnitTests
             Assert.Throws<NotFiniteNumberException>(() => Math.Root(index, radicand));
         }
 
-        // radicand must be positive
+        // radicand is negative => index must be odd
         [Theory]
-        [InlineData(1d, -1d)]
-        [InlineData(-1d, -1d)]
+        [InlineData(2d, -4d)]
+        [InlineData(-2d, -4d)]
         public void Root_DoubleOperands_ThrowsArgumentException(Double index, Double radicand)
         {
             Assert.Throws<ArgumentException>(() => Math.Root(index, radicand));
