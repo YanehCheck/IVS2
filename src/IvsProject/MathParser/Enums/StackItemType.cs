@@ -6,20 +6,10 @@ using System.Threading.Tasks;
 
 namespace MathParser.Enums
 {
-    internal enum StackItemType
+    public enum StackItemType
     {
-        Dollar,
-        Operand,
-        Add,
-        Sub,
-        Mul,
-        Div,
-        LeftBracket,
-        RightBracket,
-        Mod,
-        Pow,
-        Root,
-        Expression,
-        Factorial
+        Terminal,
+        Nonterminal,
+        Expression
     }
 }
