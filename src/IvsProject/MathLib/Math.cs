@@ -241,23 +241,24 @@ namespace MathLib {
         /// <exception cref="ArgumentException"> Thrown when the calculation would result in complex numbers.</exception>
         /// <exception cref="DivideByZeroException"> Thrown when <paramref name="n"></paramref> is zero.</exception>
         /// <exception cref="NotFiniteNumberException"></exception>
-        public static T Root<T>(T x, T n) where T : INumber<T> 
+        public static T Root<T>(T n, T x) where T : INumber<T> 
         {
-            var isIndexNegative = Comparer<T>.Default.Compare(x, default) < 0;
-            var isRadicandNegative = Comparer<T>.Default.Compare(n, default) < 0;
+            var isIndexNegative = Comparer<T>.Default.Compare(n, default) < 0;
+            var isRadicandNegative = Comparer<T>.Default.Compare(x, default) < 0;
 
-            if(!IsFinite(new[] { x, n }) || isIndexNegative && n == default)
+            if(!IsFinite(new[] { n, x }) || isIndexNegative && x == default)
                 throw new NotFiniteNumberException();
-            if(x == default)
+            if(n == default)
                 throw new DivideByZeroException();
 
-            var xDouble = (double) Convert.ChangeType(x, typeof(double));
             var nDouble = (double) Convert.ChangeType(n, typeof(double));
-            var result = System.Math.Pow(nDouble, 1 / xDouble);
-            var resultGeneric = (T) Convert.ChangeType(result, typeof(T));
-            if(((int) xDouble) % 2 == 0 && isRadicandNegative && ((int) result) == 1) {
+            var xDouble = (double) Convert.ChangeType(x, typeof(double));
+            if (nDouble % 2 == 0 && isRadicandNegative)
+            {
                 throw new ArgumentException();
             }
+            var result = System.Math.Pow(xDouble, 1 / nDouble);
+            var resultGeneric = (T) Convert.ChangeType(result, typeof(T));
             if(!IsFinite(new[] { resultGeneric })) 
             {
                 throw new OverflowException();
