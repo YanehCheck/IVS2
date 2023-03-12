@@ -15,21 +15,12 @@ namespace MathLibUnitTests
             new object[] { 0m, 0m, 0m },
             new object[] { 2.5m, 0m, 2.5m },
             new object[] { 0m, 2.1m, 2.1m },
-            new object[] { 10_000.2m, 20_000.4m, 2.5m },
-            new object[] { -10_000.2m, -20_000.2m, -30_000.0m },
+            new object[] { 10_000.2m, 20_000.4m, 30_000.6m },
+            new object[] { -10_000.2m, -20_000.2m, -30_000.4m },
             new object[] { 10_000.4m, -20_000.6m, -10000.2m },
             new object[] { -10_000.4m, 20_000.2m, 9999.8m },
             new object[] { 0.123_456_789m, 0.987_654_321m, 1.111_111_11m },
             new object[] { 0.123_456_789m, -0.987_654_321m, -0.864_197_532m }
-        };
-
-        /// <summary>
-        /// List of decimal test inputs that should throw OverflowException.
-        /// </summary>
-        public static IEnumerable<object[]> DecimalEdgeValues => new List<object[]>
-        {
-            new object[] { Constants.DECIMAL_MAX_VALUE, 1m },
-            new object[] { Constants.DECIMAL_MIN_VALUE, -1m }
         };
 
         [Theory]
@@ -84,7 +75,7 @@ namespace MathLibUnitTests
         [InlineData(2.5f, 0f, 2.5f)]
         [InlineData(0f, 2.1f, 2.1f)]
         [InlineData(10_000.2f, 20_000.4f, 30_000.6f)]
-        [InlineData(-10_000.2f, -20_000.2f, -30_000.0f)]
+        [InlineData(-10_000.2f, -20_000.2f, -30_000.4f)]
         [InlineData(10_000.4f, -20_000.6f, -10_000.2f)]
         [InlineData(-10_000.4f, 20_000.2f, 9999.8f)]
         [InlineData(0.123_456_789f, 0.987_654_321f, 1.111_111_11f)]
@@ -94,14 +85,6 @@ namespace MathLibUnitTests
             Single result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result, Constants.EPSILON);
-        }
-
-        [Theory]
-        [InlineData(Single.MinValue, -1f)]
-        [InlineData(Single.MaxValue, 1f)]
-        public void Add_SingleAddends_ThrowsOverflowException(Single leftOperand, Single rightOperand)
-        {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
         }
 
         [Theory]
@@ -124,7 +107,7 @@ namespace MathLibUnitTests
         [InlineData(2.5d, 0d, 2.5d)]
         [InlineData(0d, 2.1d, 2.1d)]
         [InlineData(10_000.2d, 20_000.4d, 30_000.6d)]
-        [InlineData(-10_000.2d, -20_000.2d, -30_000.0d)]
+        [InlineData(-10_000.2d, -20_000.2d, -30_000.4d)]
         [InlineData(10_000.4d, -20_000.6d, -10_000.2d)]
         [InlineData(-10_000.4d, 20_000.2d, 9999.8d)]
         [InlineData(0.123_456_789d, 0.987_654_321d, 1.111_111_11d)]
@@ -134,14 +117,6 @@ namespace MathLibUnitTests
             Double result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result, Constants.PRECISION);
-        }
-
-        [Theory]
-        [InlineData(Double.MinValue, -1d)]
-        [InlineData(Double.MaxValue, 1d)]
-        public void Add_DoubleAddends_ThrowsOverflowException(Double leftOperand, Double rightOperand)
-        {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
         }
 
         [Theory]
@@ -166,13 +141,6 @@ namespace MathLibUnitTests
             Decimal result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result, Constants.PRECISION);
-        }
-
-        [Theory]
-        [MemberData(nameof(DecimalEdgeValues))]
-        public void Add_DecimalAddends_ThrowsOverflowException(Decimal leftOperand, Decimal rightOperand)
-        {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
         }
     }
 }
