@@ -13,7 +13,7 @@ namespace MathLib {
         /// <returns>
         /// The sum of <paramref name="leftOperand"></paramref> and <paramref name="rightOperand"></paramref>.
         /// </returns>
-        public static T Add<T>(T leftOperand, T rightOperand) where T : INumber<T>
+        public static T Add<T>(T leftOperand, T rightOperand) where T : INumber<T> 
         {
             throw new NotImplementedException();
         }
@@ -67,9 +67,28 @@ namespace MathLib {
         /// The remainder after dividing <paramref name="leftOperand"></paramref> by <paramref name="rightOperand"></paramref>.
         /// </returns>
         /// <exception cref="DivideByZeroException"> Thrown when the <paramref name="rightOperand"></paramref> is zero.</exception>
-        public static T Modulo<T>(T leftOperand, T rightOperand) where T : INumber<T> 
-        {
-            throw new NotImplementedException();
+        /// 
+        public static T Modulo<T>(T leftOperand, T rightOperand) where T : INumber<T> {
+            if (!IsFinite(new[] { leftOperand, rightOperand })) throw new NotFiniteNumberException();
+
+            // default(T) is zero in any numeric type
+            if (rightOperand == default(T)) {
+                throw new DivideByZeroException();
+            }
+
+            var result = leftOperand % rightOperand;
+
+            // When the first operand is negative
+            // and second positive or vice versa
+            // C# tends to return the result with opposite sign
+            // than most calculators, lets fix that behavior
+            var isLeftNegative = Comparer<T>.Default.Compare(leftOperand, default) < 0;
+            var isRightNegative = Comparer<T>.Default.Compare(rightOperand, default) < 0;
+
+            if (isLeftNegative && !isRightNegative || !isLeftNegative && isRightNegative) {
+                return -result;
+            }
+            return result;
         }
 
         /// <summary>
@@ -82,7 +101,17 @@ namespace MathLib {
         /// <exception cref="ArgumentException"> Thrown when <paramref name="n"></paramref> is negative.</exception>
         public static int Factorial(int n) 
         {
-            throw new NotImplementedException();
+            if (n < 0) throw new ArgumentException();
+            if (n == 0) return 1;
+
+
+            int result = n;
+            for (int i = n - 1; i > 0; i--) {
+                checked {
+                    result *= i;
+                }
+            }
+            return result;
         }
 
 
@@ -112,6 +141,13 @@ namespace MathLib {
         public static T Root<T>(T x, T n) where T : INumber<T> 
         {
             throw new NotImplementedException();
+        }
+
+        private static bool IsFinite<T>(IEnumerable<T> numbers) where T : INumber<T> {
+            return !numbers.Any(number => 
+                                number.Equals(double.NegativeInfinity) || number.Equals(float.NegativeInfinity) ||
+                                number.Equals(double.PositiveInfinity) || number.Equals(float.PositiveInfinity) ||
+                                number.Equals(double.NaN) || number.Equals(float.NaN));
         }
     }
 }
