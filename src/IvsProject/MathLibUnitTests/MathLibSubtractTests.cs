@@ -115,7 +115,7 @@ namespace MathLibUnitTests
         [InlineData(Single.MaxValue, -1f)]
         public void Subtract_SingleOperands_ThrowsOverflowException(Single leftOperand, Single rightOperand)
         {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
+            Assert.Throws<OverflowException>(() => Math.Subtract(leftOperand, rightOperand));
         }
 
         [Theory]
@@ -130,7 +130,7 @@ namespace MathLibUnitTests
         [InlineData(Single.NegativeInfinity, 1f)]
         public void Subtract_SingleOperands_ThrowsNotFiniteNumberException(Single leftOperand, Single rightOperand)
         {
-            Assert.Throws<NotFiniteNumberException>(() => Math.Add(leftOperand, rightOperand));
+            Assert.Throws<NotFiniteNumberException>(() => Math.Subtract(leftOperand, rightOperand));
         }
 
         [Theory]
@@ -160,7 +160,7 @@ namespace MathLibUnitTests
         [InlineData(Double.MaxValue, -1d)]
         public void Subtract_DoubleOperands_ThrowsOverflowException(Double leftOperand, Double rightOperand)
         {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
+            Assert.Throws<OverflowException>(() => Math.Subtract(leftOperand, rightOperand));
         }
 
         [Theory]
@@ -175,7 +175,7 @@ namespace MathLibUnitTests
         [InlineData(Double.NegativeInfinity, 1d)]
         public void Subtract_DoubleOperands_ThrowsNotFiniteNumberException(Double leftOperand, Double rightOperand)
         {
-            Assert.Throws<NotFiniteNumberException>(() => Math.Add(leftOperand, rightOperand));
+            Assert.Throws<NotFiniteNumberException>(() => Math.Subtract(leftOperand, rightOperand));
         }
 
         [Theory]
