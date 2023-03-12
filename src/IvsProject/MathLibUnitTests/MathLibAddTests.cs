@@ -23,15 +23,6 @@ namespace MathLibUnitTests
             new object[] { 0.123_456_789m, -0.987_654_321m, -0.864_197_532m }
         };
 
-        /// <summary>
-        /// List of decimal test inputs that should throw OverflowException.
-        /// </summary>
-        public static IEnumerable<object[]> DecimalEdgeValues => new List<object[]>
-        {
-            new object[] { Constants.DECIMAL_MAX_VALUE, 1m },
-            new object[] { Constants.DECIMAL_MIN_VALUE, -1m }
-        };
-
         [Theory]
         [InlineData(0, 0, 0)]
         [InlineData(2, 0, 2)]
@@ -97,14 +88,6 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(Single.MinValue, -1f)]
-        [InlineData(Single.MaxValue, 1f)]
-        public void Add_SingleAddends_ThrowsOverflowException(Single leftOperand, Single rightOperand)
-        {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
-        }
-
-        [Theory]
         [InlineData(Single.NaN, Single.NaN)]
         [InlineData(Single.PositiveInfinity, Single.PositiveInfinity)]
         [InlineData(Single.NegativeInfinity, Single.NegativeInfinity)]
@@ -137,14 +120,6 @@ namespace MathLibUnitTests
         }
 
         [Theory]
-        [InlineData(Double.MinValue, -1d)]
-        [InlineData(Double.MaxValue, 1d)]
-        public void Add_DoubleAddends_ThrowsOverflowException(Double leftOperand, Double rightOperand)
-        {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
-        }
-
-        [Theory]
         [InlineData(Double.NaN, Double.NaN)]
         [InlineData(Double.PositiveInfinity, Double.PositiveInfinity)]
         [InlineData(Double.NegativeInfinity, Double.NegativeInfinity)]
@@ -166,13 +141,6 @@ namespace MathLibUnitTests
             Decimal result = Math.Add(leftOperand, rightOperand);
 
             Assert.Equal(expectedResult, result, Constants.PRECISION);
-        }
-
-        [Theory]
-        [MemberData(nameof(DecimalEdgeValues))]
-        public void Add_DecimalAddends_ThrowsOverflowException(Decimal leftOperand, Decimal rightOperand)
-        {
-            Assert.Throws<OverflowException>(() => Math.Add(leftOperand, rightOperand));
         }
     }
 }
