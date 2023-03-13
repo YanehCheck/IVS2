@@ -18,6 +18,11 @@ namespace CalculatorModel
         private Parser Parser { get; init; }
 
         /// <summary>
+        /// Holds reference to <see cref="ReversePolishNotationEvaluator"/> instance.
+        /// </summary>
+        private ReversePolishNotationEvaluator RpnEvaluator { get; init; }
+
+        /// <summary>
         /// Initializes a new instance of <see cref="Calculator"/> type.
         /// </summary>
         /// <param name="decimalPlaces"> To how many decimal places to round. </param>
@@ -25,6 +30,7 @@ namespace CalculatorModel
         {
             DecimalPlaces = decimalPlaces;
             Parser = new Parser();
+            RpnEvaluator = new ReversePolishNotationEvaluator();
         }
 
         /// <summary>
@@ -40,8 +46,7 @@ namespace CalculatorModel
                 return new CalculationResult(0, CalculationErrorType.SyntaxError);
             }
 
-            // TODO Calculate the parsed expression
-            throw new NotImplementedException();
+            return RpnEvaluator.EvaluateExpression(parseResult.Expression);
         }
     }
 }
