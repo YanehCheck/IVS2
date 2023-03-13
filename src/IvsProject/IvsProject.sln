@@ -26,7 +26,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathLibUnitTests", "MathLib
 		{6BEB5870-B3FA-408E-A51B-A5AA8A655E0D} = {6BEB5870-B3FA-408E-A51B-A5AA8A655E0D}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathParser", "MathParser\MathParser.csproj", "{C2DD2306-A7B4-4C37-99E3-3B7FCECCBA7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathParser", "MathParser\MathParser.csproj", "{C2DD2306-A7B4-4C37-99E3-3B7FCECCBA7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorConsoleUI", "CalculatorConsoleUI\CalculatorConsoleUI.csproj", "{A5427FC8-FCDA-403C-AECD-E72C06BF8C7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,10 @@ Global
 		{C2DD2306-A7B4-4C37-99E3-3B7FCECCBA7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2DD2306-A7B4-4C37-99E3-3B7FCECCBA7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2DD2306-A7B4-4C37-99E3-3B7FCECCBA7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5427FC8-FCDA-403C-AECD-E72C06BF8C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5427FC8-FCDA-403C-AECD-E72C06BF8C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5427FC8-FCDA-403C-AECD-E72C06BF8C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5427FC8-FCDA-403C-AECD-E72C06BF8C7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
