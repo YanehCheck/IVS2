@@ -132,9 +132,9 @@ namespace MathParser
 
         /// <summary>
         /// Makes the following adjustments: <br/>
-        /// [ "-", "5" ] => [ "-5" ] <br/>
+        /// [ "-", "5", "+", "5" ] => [ "-5", "+", 5" ] <br/>
         /// [ "(", "-", "5", ")" ] => [ "(", "-5", ")" ] <br/>
-        /// [ "(", "-", "5", ")" ] => [ "(", "-5", ")" ] <br/>
+        /// [ "5", "*", "-", "5" ] => [ "5", "*", "-5" ] <br/>
         /// And similar cases.
         /// </summary>
         /// <param name="tokens"></param>
@@ -143,9 +143,18 @@ namespace MathParser
         {
             var tokensType = GetTokensType(tokens);
 
-            if (tokens.Count > 1)
+            if (tokens.Count == 2)
             {
                 if (tokensType[0]! == "PM" && tokensType[1]! == "NU")
+                {
+                    tokens[0] = string.Concat(tokens[0], tokens[1]);
+                    tokens.RemoveAt(1);
+                    tokensType.RemoveAt(1);
+                }
+            }
+            else if (tokens.Count > 2)
+            {
+                if (tokensType[0]! == "PM" && tokensType[1]! == "NU" && tokensType[2]! != "FA")
                 {
                     tokens[0] = string.Concat(tokens[0], tokens[1]);
                     tokens.RemoveAt(1);
