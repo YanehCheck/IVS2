@@ -113,6 +113,10 @@ namespace MathParser
                 {
                     tokensType.Add("PM");
                 }
+                else if (token == "!")
+                {
+                    tokensType.Add("FA");
+                }
                 else if (token == "(")
                 {
                     tokensType.Add("LB");
