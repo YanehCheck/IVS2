@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -177,7 +178,7 @@ namespace CalculatorModel
         /// <returns>Value indicating if the conversion was successful.</returns>
         private bool ParseNumber(string number, out decimal result) 
         {
-            return decimal.TryParse(number, out result);
+            return decimal.TryParse(number, NumberStyles.Any, CultureInfo.GetCultureInfo("en-EN").NumberFormat, out result);
         }
 
         /// <summary>
