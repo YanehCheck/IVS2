@@ -3,10 +3,16 @@
 namespace CalculatorModel 
 {
     /// <summary>
-    /// Used to calculate mathematical expression.
+    /// Abstraction of a real life calculator.
+    /// Evaluates passed in expressions and features a memory function.
     /// </summary>
-    public class Calculator 
+    public class Calculator
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public Memory Memory { get; init; }
+
         /// <summary>
         /// Indicates to how many places is the calculation value rounded.
         /// </summary>
@@ -31,6 +37,7 @@ namespace CalculatorModel
             DecimalPlaces = decimalPlaces;
             Parser = new Parser();
             RpnEvaluator = new ReversePolishNotationEvaluator();
+            Memory = new Memory();
         }
 
         /// <summary>
