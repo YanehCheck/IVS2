@@ -28,11 +28,14 @@ namespace CalculatorModel
 
         /// <summary>
         /// Recalls a value.
+        /// Return 0 when stack is empty
         /// </summary>
         /// <returns></returns>
         public decimal MR() 
         {
-            return MemoryStack.Peek();
+            var success = MemoryStack.TryPeek(out var result);
+            if (success) return result;
+            return 0;
         }
 
         /// <summary>
@@ -42,7 +45,7 @@ namespace CalculatorModel
         /// <returns></returns>
         public void MC() 
         {
-            MemoryStack.Pop();
+            MemoryStack.TryPop(out _);
         }
 
         /// <summary>
