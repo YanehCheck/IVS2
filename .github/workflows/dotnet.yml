@@ -22,8 +22,6 @@ jobs:
         dotnet-version: 7.0.x
     - name: Install workloads
       run: dotnet workload restore ./src/IvsProject/IvsProject.sln
-    - name: Restore dependencies
-      run: dotnet restore ./src/IvsProject/IvsProject.sln
     - name: Build Math Library
       run: dotnet build --no-restore ./src/IvsProject/MathLib/MathLib.csproj
     - name: Build Math Parser
