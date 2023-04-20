@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:CalculatorDesktopApp.ViewModels"
+             xmlns:views="clr-namespace:CalculatorDesktopApp.Views"
+             x:Class="CalculatorDesktopApp.MainPage"
+             BackgroundColor="{Binding Theme.BackgroundColor}"
+             x:Name="Calculator"
+             x:DataType="viewModels:MainPageViewModel">
+
+    <views:ContentPageBase.Content>
+        <Grid RowDefinitions="auto, auto, *">
+            <FlexLayout Margin="0,5,0,0">
+                <Grid WidthRequest="30" HeightRequest="30">
+                    <Image BackgroundColor="Transparent" HeightRequest="20" Source="{Binding Theme.QuestionMarkSource}"/>
+                    <Button BorderColor="Transparent" Command="{Binding GoToHelpCommand}" BackgroundColor="Transparent"/>
+                </Grid>
+                <Grid WidthRequest="30" HeightRequest="30">
+                    <Image BackgroundColor="Transparent" HeightRequest="20" Source="{Binding Theme.SettingsSource}"/>
+                    <Button BorderColor="Transparent" Command="{Binding GoToSettingsCommand}" BackgroundColor="Transparent"/>
+                </Grid>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Margin="3,5,3,0" HeightRequest="108">
+                <Label Text="{Binding Result}" TextColor="{Binding ResultColor}" HorizontalTextAlignment="End"  FontSize="25" FontFamily="Jua" Margin="0"/>
+                <Label Height="{Binding ExpressionHeight, Mode=OneWayToSource}" Text="{Binding Expression}" TextColor="{Binding Theme.TextColor}" IsVisible="True" HorizontalTextAlignment="End" FontSize="{Binding ExpressionFontSize}" FontFamily="Jua" Margin="0"/>
+            </StackLayout>
+            <StackLayout Margin="2,0,2,2"  Grid.Row="2">
+                <FlexLayout Margin="0,0,0,0" JustifyContent="Start"  Wrap="Wrap">
+                    <Button BorderColor="Transparent" Command="{Binding ButtonPressedCommand}" CommandParameter="MC" TextColor="{Binding Theme.TextColor}" WidthRequest="50" HeightRequest="45" Padding="0,0,0,0" BackgroundColor="Transparent" Text="MC" FontSize="14"/>
+                    <Button BorderColor="Transparent" Command="{Binding ButtonPressedCommand}" CommandParameter="MR" TextColor="{Binding Theme.TextColor}" WidthRequest="50" HeightRequest="45" Padding="0,0,0,0" BackgroundColor="Transparent" Text="MR" FontSize="14"/>
+                    <Button BorderColor="Transparent" Command="{Binding ButtonPressedCommand}" CommandParameter="M+" TextColor="{Binding Theme.TextColor}" WidthRequest="50" HeightRequest="45" Padding="0,0,0,0" BackgroundColor="Transparent" Text="M+" FontSize="14"/>
+                    <Button BorderColor="Transparent" Command="{Binding ButtonPressedCommand}" CommandParameter="M-" TextColor="{Binding Theme.TextColor}" WidthRequest="50" HeightRequest="45" Padding="0,0,0,0" BackgroundColor="Transparent" Text="M-" FontSize="14"/>
+                    <Button BorderColor="Transparent" Command="{Binding ButtonPressedCommand}" CommandParameter="MS" TextColor="{Binding Theme.TextColor}" WidthRequest="50" HeightRequest="45" Padding="0,0,0,0" BackgroundColor="Transparent" Text="MS" FontSize="14"/>
+                </FlexLayout>
+                <Grid RowSpacing="2" ColumnSpacing="2" VerticalOptions="FillAndExpand" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*">
+                    <Button CornerRadius="5" Grid.Row="0" Grid.Column="0" Command="{Binding ButtonPressedCommand}" CommandParameter="CE" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="CE" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="0" Grid.Column="1" Command="{Binding ButtonPressedCommand}" CommandParameter="(" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="(" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="0" Grid.Column="2" Command="{Binding ButtonPressedCommand}" CommandParameter=")" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text=")" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="0" Grid.Column="3" Command="{Binding ButtonPressedCommand}" CommandParameter="%" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="%" FontFamily="Jua" FontSize="20"/>
+
+                    <Button CornerRadius="5" Grid.Row="1" Grid.Column="0" Command="{Binding ButtonPressedCommand}" CommandParameter="√" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="√" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="1" Grid.Column="1" Command="{Binding ButtonPressedCommand}" CommandParameter="^" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="^" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="1" Grid.Column="2" Command="{Binding ButtonPressedCommand}" CommandParameter="!" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="!" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="1" Grid.Column="3" Command="{Binding ButtonPressedCommand}" CommandParameter="÷" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="÷" FontFamily="Jua" FontSize="24"/>
+
+                    <Button CornerRadius="5" Grid.Row="2" Grid.Column="0" Command="{Binding ButtonPressedCommand}" CommandParameter="7" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="7" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="2" Grid.Column="1" Command="{Binding ButtonPressedCommand}" CommandParameter="8" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="8" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="2" Grid.Column="2" Command="{Binding ButtonPressedCommand}" CommandParameter="9" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="9" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="2" Grid.Column="3" Command="{Binding ButtonPressedCommand}" CommandParameter="x" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="x" FontFamily="Jua" FontSize="20"/>
+
+                    <Button CornerRadius="5" Grid.Row="3" Grid.Column="0" Command="{Binding ButtonPressedCommand}" CommandParameter="4" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="4" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="3" Grid.Column="1" Command="{Binding ButtonPressedCommand}" CommandParameter="5" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="5" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="3" Grid.Column="2" Command="{Binding ButtonPressedCommand}" CommandParameter="6" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="6" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="3" Grid.Column="3" Command="{Binding ButtonPressedCommand}" CommandParameter="-" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="-" FontFamily="Jua" FontSize="20"/>
+
+                    <Button CornerRadius="5" Grid.Row="4" Grid.Column="0" Command="{Binding ButtonPressedCommand}" CommandParameter="1" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="1" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="4" Grid.Column="1" Command="{Binding ButtonPressedCommand}" CommandParameter="2" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="2" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="4" Grid.Column="2" Command="{Binding ButtonPressedCommand}" CommandParameter="3" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="3" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="4" Grid.Column="3" Command="{Binding ButtonPressedCommand}" CommandParameter="+" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonElseColor}" Text="+" FontFamily="Jua" FontSize="20"/>
+
+                    <Button CornerRadius="5" Grid.Row="5" Grid.Column="0" Command="{Binding ButtonPressedCommand}" CommandParameter="" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="5" Grid.Column="1" Command="{Binding ButtonPressedCommand}" CommandParameter="0" TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="0" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="5" Grid.Column="2" Command="{Binding ButtonPressedCommand}" CommandParameter="," TextColor="{Binding Theme.TextColor}" BackgroundColor="{Binding Theme.ButtonNumbersColor}" Text="•" FontFamily="Jua" FontSize="20"/>
+                    <Button CornerRadius="5" Grid.Row="5" Grid.Column="3" Command="{Binding ButtonPressedCommand}" CommandParameter="=" TextColor="White" BackgroundColor="#A160FB" Text="=" FontFamily="Jua" FontSize="20"/>
+                </Grid>
+            </StackLayout>
+
+        </Grid>
+    </views:ContentPageBase.Content>
+
+</views:ContentPageBase>
