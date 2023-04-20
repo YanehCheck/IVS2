@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:CalculatorDesktopApp.Views"
+             xmlns:viewModels="clr-namespace:CalculatorDesktopApp.ViewModels"
+             x:Class="CalculatorDesktopApp.Views.SettingsView"
+             x:DataType="viewModels:SettingsViewModel">
+
+    <VerticalStackLayout Padding="10,0" BackgroundColor="{Binding ThemeModel.BackgroundColor}">
+        <StackLayout>
+            <Label Margin="0,20,0,15" FontSize="25" TextColor="{Binding ThemeModel.TextColor}" FontFamily="Jua" Text="Settings"/>
+            <Label TextColor="{Binding ThemeModel.SettingsSectionColor}" FontSize="15" Text="THEME" FontFamily="Jua"/>
+            <Grid ColumnDefinitions="*"></Grid>
+            <Picker MaximumWidthRequest="400" SelectedItem="{Binding Theme}" x:Name="Picker" BackgroundColor="White" TextColor="Black" HorizontalOptions="Start" WidthRequest="{Binding Path=Width, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type StackLayout}}}">
+                <Picker.Items>
+                    <x:String>Dark</x:String>
+                    <x:String>Light</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Margin="0,20,0,-5" TextColor="{Binding ThemeModel.SettingsSectionColor}" FontSize="15" Text="DECIMAL PLACES" FontFamily="Jua"/>
+            <FlexLayout>
+                <Label WidthRequest="30" Margin="0,5,0,0" VerticalTextAlignment="Center" TextColor="{Binding ThemeModel.SettingsSectionColor}" FontFamily="Jua" FontSize="25" Text="{Binding Source={x:Reference Stepper}, Path=Value}"></Label>
+                <Stepper Value="{Binding DecimalPlaces}" Minimum="0" Maximum="8" x:Name="Stepper" BackgroundColor="white"/>
+            </FlexLayout>
+        </StackLayout>
+    </VerticalStackLayout>
+</views:ContentPageBase>
