@@ -40,121 +40,38 @@ namespace CalculatorDesktopApp.ViewModels
             hook.RunAsync();
         }
 
-        private string KeyCodeToString(KeyCode keyCode)
-        {
-            switch (keyCode)
-            {
-                case KeyCode.VcNumPad0:
-                {
-                    return "0";
-                }
-                case KeyCode.VcNumPad1:
-                {
-                    return "1";
-                }
-                case KeyCode.VcNumPad2:
-                {
-                    return "2";
-                }
-                case KeyCode.VcNumPad3:
-                {
-                    return "3";
-                }
-                case KeyCode.VcNumPad4:
-                {
-                    return "4";
-                }
-                case KeyCode.VcNumPad5:
-                {
-                    return "5";
-                }
-                case KeyCode.VcNumPad6:
-                {
-                    return "6";
-                }
-                case KeyCode.VcNumPad7:
-                {
-                    return "7";
-                }
-                case KeyCode.VcNumPad8:
-                {
-                    return "8";
-                }
-                case KeyCode.VcNumPad9:
-                {
-                    return "9";
-                }
-                case KeyCode.VcNumPadSeparator:
-                case KeyCode.VcPeriod:
-                {
-                    return "•";
-                }
-                case KeyCode.VcLeftControl:
-                {
-                    return "ctrl";
-                }
-                case KeyCode.VcC:
-                {
-                    return "c";
-                }
-                case KeyCode.VcNumPadAdd:
-                {
-                    return "+";
-                }
-                case KeyCode.VcNumPadSubtract:
-                {
-                    return "-";
-                }
-                case KeyCode.VcNumPadMultiply:
-                {
-                    return "*";
-                }
-                case KeyCode.VcNumPadDivide:
-                {
-                    return "/";
-                }
-                case KeyCode.VcOpenBracket:
-                {
-                    return "(";
-                }
-                case KeyCode.VcCloseBracket:
-                {
-                    return ")";
-                }
-                case KeyCode.VcBackspace:
-                {
-                    return "CE";
-                }
-                case KeyCode.VcEnter:
-                case KeyCode.VcNumPadEnter:
-                {
-                    return "=";
-                }
-                case KeyCode.VcF1:
-                {
-                    return "MC";
-                }
-                case KeyCode.VcF2:
-                {
-                    return "MR";
-                }
-                case KeyCode.VcF3:
-                {
-                    return "M+";
-                }
-                case KeyCode.VcF4:
-                {
-                    return "M-";
-                }
-                case KeyCode.VcF5:
-                {
-                    return "MS";
-                }
-                default:
-                {
-                    return "$";
-                }
-            }
+        private string KeyCodeToString(KeyCode keyCode) {
+            return keyCode switch {
+                KeyCode.VcNumPad0 => "0",
+                KeyCode.VcNumPad1 => "1",
+                KeyCode.VcNumPad2 => "2",
+                KeyCode.VcNumPad3 => "3",
+                KeyCode.VcNumPad4 => "4",
+                KeyCode.VcNumPad5 => "5",
+                KeyCode.VcNumPad6 => "6",
+                KeyCode.VcNumPad7 => "7",
+                KeyCode.VcNumPad8 => "8",
+                KeyCode.VcNumPad9 => "9",
+                KeyCode.VcNumPadSeparator => "•",
+                KeyCode.VcPeriod => "•",
+                KeyCode.VcLeftControl => "ctrl",
+                KeyCode.VcC => "c",
+                KeyCode.VcNumPadAdd => "+",
+                KeyCode.VcNumPadSubtract => "-",
+                KeyCode.VcNumPadMultiply => "*",
+                KeyCode.VcNumPadDivide => "/",
+                KeyCode.VcOpenBracket => "(",
+                KeyCode.VcCloseBracket => ")",
+                KeyCode.VcBackspace => "CE",
+                KeyCode.VcEnter => "=",
+                KeyCode.VcNumPadEnter => "=",
+                KeyCode.VcF1 => "MC",
+                KeyCode.VcF2 => "MR",
+                KeyCode.VcF3 => "M+",
+                KeyCode.VcF4 => "M-",
+                KeyCode.VcF5 => "MS",
+                _ => "$"
+            };
         }
         private void OnKeyDown(KeyCode keyCode)
         {
@@ -255,7 +172,15 @@ namespace CalculatorDesktopApp.ViewModels
                     else
                     {
                         ResultColor = _ko;
-                        Result = "Error";
+                        Result = result.ErrorType switch {
+                            CalculationErrorType.DivisionByZeroErrorInIndex => "Division By Zero",
+                            CalculationErrorType.DivisionByZeroError => "Division By Zero",
+                            CalculationErrorType.NoRealSolutionError => "No Real Solution",
+                            CalculationErrorType.SyntaxError => "Syntax Error",
+                            CalculationErrorType.OverflowError => "Overflow Error",
+                            CalculationErrorType.NotNaturalExponentError => "Non-Natural Exponent",
+                            CalculationErrorType.NotNaturalFactorialError => "Non-Natural Factorial"
+                        };
                     }
                     break;
                 }
