@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathParser", "MathParser\Ma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorConsoleUI", "CalculatorConsoleUI\CalculatorConsoleUI.csproj", "{A5427FC8-FCDA-403C-AECD-E72C06BF8C7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorDesktopApp", "CalculatorDesktopApp\CalculatorDesktopApp.csproj", "{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorDesktopApp", "CalculatorDesktopApp\CalculatorDesktopApp.csproj", "{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CalculatorSetup", "CalculatorSetup\CalculatorSetup.vdproj", "{250AB18F-A49B-4F57-B286-56FCC5481633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,8 @@ Global
 		{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{250AB18F-A49B-4F57-B286-56FCC5481633}.Debug|Any CPU.ActiveCfg = Debug
+		{250AB18F-A49B-4F57-B286-56FCC5481633}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
