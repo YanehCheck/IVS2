@@ -32,7 +32,7 @@ namespace CalculatorDesktopApp.ViewModels
         private int _decimalPlaces;
 
         /// <summary>
-        /// Binded string representation of the application's theme
+        /// A string representation of the application's theme
         /// </summary>
         public string Theme
         {
@@ -45,7 +45,7 @@ namespace CalculatorDesktopApp.ViewModels
         }
 
         /// <summary>
-        /// Binded int representation of decimal numbers
+        /// Int representation of decimal numbers
         /// </summary>
         public int DecimalPlaces
         {
