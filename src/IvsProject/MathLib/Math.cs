@@ -169,14 +169,14 @@ namespace MathLib {
         /// </returns>
         /// <exception cref="ArgumentException"> Thrown when <paramref name="n"></paramref> is negative.</exception>
         /// <exception cref="OverflowException"></exception> 
-        public static int Factorial(int n) 
+        public static BigInteger Factorial(BigInteger n) 
         {
             if (n < 0) throw new ArgumentException();
             if (n == 0) return 1;
 
 
-            int result = n;
-            for (int i = n - 1; i > 0; i--) 
+            BigInteger result = n;
+            for (BigInteger i = n - 1; i > 0; i--) 
             {
                 checked 
                 {

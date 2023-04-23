@@ -1,4 +1,5 @@
-﻿using Math = MathLib.Math;
+﻿using System.Numerics;
+using Math = MathLib.Math;
 
 namespace MathLibUnitTests
 {
@@ -16,7 +17,7 @@ namespace MathLibUnitTests
         [InlineData(12, 479_001_600)]
         public void Factorial_Int32Operand_ReturnsFactorial(Int32 n, Int32 expectedResult)
         {
-            Int32 result = Math.Factorial(n);
+            BigInteger result = Math.Factorial(n);
 
             Assert.Equal(expectedResult, result);
         }
@@ -24,7 +25,7 @@ namespace MathLibUnitTests
         [Theory]
         [InlineData(13)]
         [InlineData(14)]
-        [InlineData(Int32.MaxValue)]
+        [InlineData(77777777777)]
         public void Factorial_Int32Operand_ThrowsOverflowException(Int32 n)
         {
             Assert.Throws<OverflowException>(() => Math.Factorial(n));
@@ -33,7 +34,7 @@ namespace MathLibUnitTests
         [Theory]
         [InlineData(-1)]
         [InlineData(-2)]
-        [InlineData(Int32.MinValue)]
+        [InlineData(-77777777777)]
         public void Factorial_Int32Operand_ThrowsArgumentException(Int32 n)
         {
             Assert.Throws<ArgumentException>(() => Math.Factorial(n));

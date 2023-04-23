@@ -4,5 +4,4 @@
              x:Class="CalculatorDesktopApp.Views.HelpView">
 
     <WebView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="https://www.stud.fit.vutbr.cz/~xcechm13/ICS/"/>
-
 </ContentPage>
