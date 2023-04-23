@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_6F321B0B4B7942C4954590B21E90834D"
+        "MsmKey" = "8:_029B71706BD54B01AB6D11854A173347"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BF87829073B74578A3FBBF9810EB9934"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -44,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -108,6 +122,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_029B71706BD54B01AB6D11854A173347"
+            {
+            "SourcePath" = "8:..\\..\\..\\resources\\appicon.ico"
+            "TargetName" = "8:appicon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_E07CC2F5BB5143ABBEE9A5E7C96BE1C3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -176,7 +210,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DigitObliterator"
         "ProductCode" = "8:{831FC751-93B6-4625-8EA9-AAD393918532}"
-        "PackageCode" = "8:{17312E53-81B4-4781-B3E5-ED4E31BD645C}"
+        "PackageCode" = "8:{65182F91-80B6-4453-B915-A3C681D7AB29}"
         "UpgradeCode" = "8:{A44133A4-79CF-4813-B476-8B9CA7086887}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -304,10 +338,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_6F321B0B4B7942C4954590B21E90834D"
+            "Target" = "8:_BF87829073B74578A3FBBF9810EB9934"
             "Folder" = "8:_55C56138A2564E32A199D007A15A46DC"
             "WorkingFolder" = "8:_E07CC2F5BB5143ABBEE9A5E7C96BE1C3"
-            "Icon" = "8:"
+            "Icon" = "8:_029B71706BD54B01AB6D11854A173347"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9CF529D5A2A04265A2B6D5CED74EA029"
@@ -318,10 +352,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_6F321B0B4B7942C4954590B21E90834D"
+            "Target" = "8:_BF87829073B74578A3FBBF9810EB9934"
             "Folder" = "8:_0291A5F6950D4F62BD8DAFE9B5A21BBD"
             "WorkingFolder" = "8:_E07CC2F5BB5143ABBEE9A5E7C96BE1C3"
-            "Icon" = "8:"
+            "Icon" = "8:_029B71706BD54B01AB6D11854A173347"
             "Feature" = "8:"
             }
         }
@@ -723,9 +757,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6F321B0B4B7942C4954590B21E90834D"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BF87829073B74578A3FBBF9810EB9934"
             {
-            "SourcePath" = "8:..\\CalculatorDesktopApp\\obj\\Release\\net7.0-windows10.0.19041.0\\win10-x64\\CalculatorDesktopApp.dll"
+            "SourcePath" = "8:..\\CalculatorDesktopApp\\obj\\Release\\net7.0-windows10.0.19041.0\\win10-x64\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E07CC2F5BB5143ABBEE9A5E7C96BE1C3"
@@ -744,7 +778,7 @@
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
+            "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
