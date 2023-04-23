@@ -8,6 +8,7 @@ using System.Reflection.Metadata;
 using SharpHook;
 using SharpHook.Native;
 using System.Reactive.Linq;
+using System.Reflection;
 using CalculatorDesktopApp.Messages;
 using CalculatorDesktopApp.Services.Interfaces;
 using CalculatorModel;
@@ -217,6 +218,14 @@ namespace CalculatorDesktopApp.ViewModels
         {
             System.Diagnostics.Debug.WriteLine("Changing theme");
             Theme = Settings.Theme;
+        }
+
+        public async void MouseEntered(object sender, PointerEventArgs e) {
+           
+        }
+
+        private async void MouseExited(object sender, PointerEventArgs e) {
+            throw new NotImplementedException();
         }
     }
 }
