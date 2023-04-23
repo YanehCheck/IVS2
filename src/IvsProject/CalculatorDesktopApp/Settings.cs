@@ -7,6 +7,9 @@ using CalculatorDesktopApp.Models;
 
 namespace CalculatorDesktopApp
 {
+    /// <summary>
+    /// Static class to store the current application settings
+    /// </summary>
     public static class Settings
     {
         public static ThemeModel Theme;

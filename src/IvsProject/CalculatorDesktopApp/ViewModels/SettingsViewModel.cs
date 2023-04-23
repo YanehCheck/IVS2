@@ -11,11 +11,29 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace CalculatorDesktopApp.ViewModels
 {
-    public partial class SettingsViewModel : ViewModelBase
+    /// <summary>
+    /// ViewModel for Calculator settings
+    /// </summary>
+    public class SettingsViewModel : ViewModelBase
     {
+        /// <summary>
+        /// Application theme
+        /// </summary>
         public ThemeModel ThemeModel { get; set; }
+
+        /// <summary>
+        /// A string representation of the application's theme
+        /// </summary>
         private string _theme;
+
+        /// <summary>
+        /// Int representation of decimal numbers
+        /// </summary>
         private int _decimalPlaces;
+
+        /// <summary>
+        /// A string representation of the application's theme
+        /// </summary>
         public string Theme
         {
             get => _theme;
@@ -26,6 +44,9 @@ namespace CalculatorDesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Int representation of decimal numbers
+        /// </summary>
         public int DecimalPlaces
         {
             get => _decimalPlaces;
@@ -35,6 +56,11 @@ namespace CalculatorDesktopApp.ViewModels
                 ChangeDecimalPlaces();
             }
         }
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="SettingsViewModel"/> type.
+        /// </summary>
+        /// <param name="messengerService"> Sending messages between ViewModels. </param>
         public SettingsViewModel(IMessengerService messengerService) : base(messengerService)
         {
             ThemeModel = Settings.Theme;
@@ -42,6 +68,9 @@ namespace CalculatorDesktopApp.ViewModels
             DecimalPlaces = Settings.DecimalPlaces;
         }
 
+        /// <summary>
+        /// Setting a new app theme and sending a message about it to other ViewModels
+        /// </summary> 
         private void ChangeTheme()
         {
             if (_theme == "Dark")
@@ -58,6 +87,9 @@ namespace CalculatorDesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Setting a new decimal places and sending a message about it to other ViewModels
+        /// </summary> 
         private void ChangeDecimalPlaces()
         {
             Settings.DecimalPlaces = _decimalPlaces;
