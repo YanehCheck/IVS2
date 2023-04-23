@@ -21,8 +21,8 @@ Autori
 ------
 
 No Risk, No Reward
-- xpomik01 - [DOPLN JMENO]
-- xcechm13 - [DOPLN JMENO]
+- xpomik01 - [Jakub Pomikálek]
+- xcechm13 - [Roman Čechmánek]
 - xsalon02 - [DOPLN JMENO]
 - xjanec36 - Michael Janeček
 
