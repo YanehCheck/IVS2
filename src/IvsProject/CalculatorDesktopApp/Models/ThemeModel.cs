@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CalculatorDesktopApp.Models
 {
+    /// <summary>
+    /// Data model for the app theme
+    /// </summary>
     public record ThemeModel : ModelBase
     {
         public Color BackgroundColor { get; set; }
@@ -19,6 +22,8 @@ namespace CalculatorDesktopApp.Models
         public Color ButtonElseHoverColor { get; set; }
         public Color ButtonNumbersHoverColor { get; set; }
         public Color ButtonEqualHoverColor { get; set; }
+        public Color ResultOk { get; set; }
+        public Color ResultError { get; set; }
         public string QuestionMarkSource { get; set; }
         public string SettingsSource { get; set; }
 
@@ -33,6 +38,8 @@ namespace CalculatorDesktopApp.Models
             ButtonNumbersHoverColor = Color.FromRgb(69, 69, 69),
             ButtonElseHoverColor = Color.FromRgb(60, 60, 60),
             ButtonEqualHoverColor = Color.FromRgb(150, 72, 245),
+            ResultOk = Color.FromRgb(161, 96, 251),
+            ResultError = Color.FromRgb(255, 0, 0),
             QuestionMarkSource = "qm_white.png",
             SettingsSource = "settings_white.png"
         };
@@ -48,6 +55,8 @@ namespace CalculatorDesktopApp.Models
             ButtonNumbersHoverColor = Color.FromRgb(239, 239, 239),
             ButtonElseHoverColor = Color.FromRgb(249, 249, 249),
             ButtonEqualHoverColor = Color.FromRgb(150, 72, 245),
+            ResultOk = Color.FromRgb(161, 96, 251),
+            ResultError = Color.FromRgb(255, 0, 0),
             QuestionMarkSource = "qm_black.png",
             SettingsSource = "settings_black.png"
         };

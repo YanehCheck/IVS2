@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CalculatorDesktopApp.Messages
 {
+    /// <summary>
+    /// A message about decimal place change.
+    /// </summary>
     public record DecimalPlacesMessage
     {
     }

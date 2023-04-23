@@ -7,6 +7,9 @@ using CalculatorDesktopApp.Models;
 
 namespace CalculatorDesktopApp.Messages
 {
+    /// <summary>
+    /// A message about application theme change.
+    /// </summary>
     public record ThemeMessage
     {
     }
