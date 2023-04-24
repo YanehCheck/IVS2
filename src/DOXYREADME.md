@@ -1,5 +1,4 @@
-# 2. Projekt do IVS
-Kalkulačka a profiler
+# Kalkulačka
 
 Použité technologie a závislosti
 --------
@@ -21,7 +20,7 @@ src/
   IvsProject                ; Obsahuje zdrojové kódy rozřazené do projektů (včetně profileru)  
   Makefile  
   Doxyfile  
-  DOXYREADME.md                 ; Upravené README pro doxygen dokumentaci  
+  DOXYREADME.md		    ; Dokument, který právě čtete
 debugging.png  
 dokumentace.pdf  
 screenshot.png  
@@ -31,8 +30,6 @@ README.md
 LICENSE                     ; GPL v2
 .gitignore  
 </pre>
-
-Rozhodli jsme se nepoužívat soubor .editorconfig, neboť jsme všichni při vývoji využívali výchozí nastavení Visual Studio (oficiální C# coding conventions).
 
 Prostředí
 ---------
