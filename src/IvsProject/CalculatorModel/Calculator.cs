@@ -53,7 +53,12 @@ namespace CalculatorModel
                 return new CalculationResult(0, CalculationErrorType.SyntaxError);
             }
 
-            return RpnEvaluator.EvaluateExpression(parseResult.Expression);
+            var result = RpnEvaluator.EvaluateExpression(parseResult.Expression);
+            if (result.ErrorType == CalculationErrorType.None) 
+            {
+                return new CalculationResult(Math.Round(result.Value, DecimalPlaces, MidpointRounding.ToEven));
+            }
+            return result;
         }
     }
 }
