@@ -11,11 +11,11 @@ class Deviation
     static void Main()
     {
         // Read numbers from input
-        /*List<double> numbers = new List<double>();
+        List<double> numbers = new List<double>();
         string line;
         while ((line = Console.ReadLine()) != null)
         {
-            string[] tokens = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] tokens = line.Split(new char[] { ' ', '\t'}, StringSplitOptions.RemoveEmptyEntries);
             foreach (string token in tokens)
             {
                 if (double.TryParse(token, out double number))
@@ -23,14 +23,6 @@ class Deviation
                     numbers.Add(number);
                 }
             }
-        }*/
-
-        // Generate random numbers for profiling
-        List<double> numbers = new List<double>();
-        Random random = new Random();
-        for (uint i = 0; i < 10; i++)
-        {
-            numbers.Add(random.NextDouble());
         }
 
         // Calculate average value of numbers
