@@ -35,11 +35,26 @@ Rozhodli jsme se nepoužívat soubor .editorconfig, neboť jsme všichni při v�
 
 Prostředí
 ---------
-Kalkulačka a profiler je podporována na operačních systémech:
+Kalkulačka je zaručeně podporována na operačních systémech:
 * Windows 11 64-bit
-* Windows 10 64-bit verze 1809 nebo vyšší
+* Windows 10 64-bit verze 1941 nebo vyšší
 
-[UPLOADNI INSTALACKU DO REALEASES A DOPLN KRATKY NAVOD JAK TO ZPROVOZNIT]
+Po správném sestavení zdrojového kódu je kalkulačka podporována na platformách Mac, iOS a Android.  
+
+Instalace
+---------
+
+Kalkulačka vyžaduje mít nainstalovaný [.NET 7 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
+
+Pro provedení instalace kalkulačky je nutné nejprve extrahovat instalační soubory z případného archivu, ve kterém se nachází. 
+Následně stačí spustit MSIX soubor pojmenovaný ve formátu:
+<pre>
+DigitObliterator_[verze]_[isa].msix
+</pre>
+
+Po zahájení instalačního procesu vás instalační průvodce provede celým procesem a nainstaluje kalkulačku na váš počítač.
+
+Pro kompletní odinstalaci je k dispozici [standardní odinstalační funkce operačního systému Windows](https://support.microsoft.com/cs-cz/windows/odinstalace-nebo-odebrání-aplikací-a-programů-ve-windows-4b55f974-2cc6-2d2b-d092-5905080eaf98#ID0EBD=Windows_11).
 
 Autoři
 ------
