@@ -31,8 +31,8 @@
 	</PropertyGroup>
 
   <PropertyGroup>
-    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint></PackageCertificateThumbprint>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint>C08FDC22DD60E59089E7D3BAC121A3080EC2F218</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(RuntimeIdentifierOverride)' != ''">
     <RuntimeIdentifier>$(RuntimeIdentifierOverride)</RuntimeIdentifier>
