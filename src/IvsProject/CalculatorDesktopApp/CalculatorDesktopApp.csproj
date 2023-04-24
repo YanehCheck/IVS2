@@ -5,16 +5,16 @@
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
-		<RootNamespace>CalculatorDesktopApp</RootNamespace>
+		<RootNamespace>DigitObliterator</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>CalculatorDesktopApp</ApplicationTitle>
+		<ApplicationTitle>DigitObliterator</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.calculatordesktopapp</ApplicationId>
+		<ApplicationId>com.NoRiskNoReward.DigitObliterator</ApplicationId>
 		<ApplicationIdGuid>162a2ee3-e383-4c6d-80ee-4c41c70d7291</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -29,6 +29,14 @@
 	<PropertyGroup>
 	  <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 	</PropertyGroup>
+
+  <PropertyGroup>
+    <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint></PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RuntimeIdentifierOverride)' != ''">
+    <RuntimeIdentifier>$(RuntimeIdentifierOverride)</RuntimeIdentifier>
+  </PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->
