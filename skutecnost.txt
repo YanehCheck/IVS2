@@ -1,0 +1,7 @@
+Dodržení plánu nám nevyšlo nejlépe, ale všechno jsme stihli včas.
+
+Docela dobrý časový i architektonický návrh jsme měli již skoro první den a tak jsme zdánlivou většinu práce spojenou s programováním jsme měli hotovou v prvních dnech. Poté jsme přes semestr neměli nikdo moc času, tak termíny zbylých úloh pomalu propadávali.
+
+Necelý týden před odevzdáním jsme se rozhlodli projekt dodělat, nicméně bylo to více práce než jsme čekali. Různé chyby spojené se závislostmi, instalací a relativně novým GUI frameworkem nás stáli spoustu času, který byl bohužel ubrán z času vymezeného na dolaďování detailů. 
+
+Plán rozvržení hlavních úloh zůstal poměrně stejný a tak každý pracoval na svojich věcech s případnou pomocí nebo hovorech o plánech rozhraní, integraci a různých otázkách o designu. Z časových důvodů na několika věcech pracovali jiní členové teamu, kteří měli s danými věcmi více zkušeností.
