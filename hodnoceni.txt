@@ -1,4 +1,4 @@
-xpomik01 100 Profiling, MakeFile, In-App uživatelská dokumentace
-xcechm13 100 GUI, Parser matematických výrazů
-xsalon02 100 Unit Testy, GUI mock-up
-xjanec36 100 Matematická knihovna, Struktura kalkulačky, Uživatelská dokumentace, Instalátor
+xpomik01 100 (Profiling, MakeFile, In-App uživatelská dokumentace)
+xcechm13 100 (GUI, Parser matematických výrazů)
+xsalon02 100 (Unit Testy, GUI mock-up)
+xjanec36 100 (Matematická knihovna, Struktura kalkulačky, Uživatelská dokumentace, Instalátor)
