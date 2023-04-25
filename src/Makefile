@@ -6,11 +6,11 @@ PROFILER_RELEASE_PATH=IvsProject\Profiler\bin\Release\net7.0\Profiler.exe
 all: run
 
 run:
-	@IF EXIST $(APP_DEBUG_PATH) ("$(APP_DEBUG_PATH)") ELSE ( IF EXIST $(APP_RELEASE_PATH) ("$(APP_RELEASE_PATH)") ELSE (echo Aplikaci je potreba nejdrive prelozit))
+	@IF EXIST $(APP_DEBUG_PATH) ("$(APP_DEBUG_PATH)") ELSE ( IF EXIST $(APP_RELEASE_PATH) ("$(APP_RELEASE_PATH)") ELSE (echo First build the application -make help))
 
 profile:
 	@echo 10 20 30 40 50 60 70 80 90 100 > test_input.txt
-	@IF EXIST $(PROFILER_DEBUG_PATH) ($(PROFILER_DEBUG_PATH) < test_input.txt) ELSE ( IF EXIST $(PROFILER_RELEASE_PATH) ($(PROFILER_RELEASE_PATH) < test_input.txt) ELSE (echo Profiler je potreba nejdrive prelozit))
+	@IF EXIST $(PROFILER_DEBUG_PATH) ($(PROFILER_DEBUG_PATH) < test_input.txt) ELSE ( IF EXIST $(PROFILER_RELEASE_PATH) ($(PROFILER_RELEASE_PATH) < test_input.txt) ELSE (echo First build the profiler -make help))
 	@del /q test_input.txt
 
 pack:
@@ -29,4 +29,10 @@ clean:
 	for /d %%i in (IvsProject\*) do (if exist "%%i\obj" rd /s /q "%%i\obj")
 
 help:
-	@echo TODO napoveda co je potreba pred spustenim programu
+	@echo CALCULATOR:
+	@echo Open src\IvsProject\IvsProject.sln in Visual Studio 2022.
+	@echo UI Framework - MAUI need to be installed.
+	@echo Open Solution Explorer, right click on CalculatorDesktopApp and build it.
+	@echo PROFILER:
+	@echo Open src\IvsProject\IvsProject.sln in Visual Studio 2022.
+	@echo Open Solution Explorer, right click on Profiler and build it.
