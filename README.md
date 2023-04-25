@@ -48,12 +48,40 @@ Instalace
 Kalkulačka vyžaduje mít nainstalovaný [.NET 7 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
 
 Pro provedení instalace kalkulačky je nutné nejprve extrahovat instalační soubory z případného archivu, ve kterém se nachází. 
-Následně stačí spustit MSIX soubor pojmenovaný ve formátu:
+Před zahájením certifikace je nutno přidat certifikát jako důvěryhodný. Vizuální návod včetně přeložení můžete najít [zde](https://learn.microsoft.com/en-us/dotnet/maui/windows/deployment/publish-cli?view=net-maui-7.0).
+
+- Klikněte pravým tlačítkem myši na soubor .msix a vyberte možnost Vlastnosti.
+
 <pre>
 DigitObliterator_[verze]_[isa].msix
 </pre>
 
-Po zahájení instalačního procesu vás instalační průvodce provede celým procesem a nainstaluje kalkulačku na váš počítač.
+- Vyberte kartu Digitální podpisy.
+- Zvolte certifikát a poté Klepněte na Detaily.
+
+- Vlastnosti panelu souboru MSIX s vybranou záložkou digitálních podpisů.
+
+- Klepněte na Zobrazit certifikát.
+
+- Poté vyberte Nainstalovat certifikát....
+
+- Vyberte Moje počítače a klepněte na Další.
+
+- Pokud se zobrazí dotaz UAC (Uživatelská kontrola účtu), zvolte Ano.
+
+- V okně Průvodce importem certifikátů zvolte Možnost umístit všechny certifikáty do následujícího úložiště.
+
+- Vyberte Procházet a poté zvolte úložiště Důvěryhodné osoby. Poté klepněte na OK a zavřete dialog.
+
+- Okno průvodce importem certifikátů se zobrazeným výběrem úložiště Důvěryhodné osoby.
+
+- Zvolte Další a poté Dokončit. Měli byste vidět dialogové okno s textem: Import byl úspěšný.
+
+- Okno průvodce importem certifikátů s úspěšnou zprávou o importu.
+
+- Klepněte na OK na všech oknech, která se v rámci tohoto procesu otevřela, abyste je uzavřeli.
+
+Pro zahájení instalačního procesu spusťte výše uvedený soubor. Instalační průvodce vás provede celým procesem a nainstaluje kalkulačku na váš počítač.
 
 Pro kompletní odinstalaci je k dispozici [standardní odinstalační funkce operačního systému Windows](https://support.microsoft.com/cs-cz/windows/odinstalace-nebo-odebrání-aplikací-a-programů-ve-windows-4b55f974-2cc6-2d2b-d092-5905080eaf98#ID0EBD=Windows_11).
 
