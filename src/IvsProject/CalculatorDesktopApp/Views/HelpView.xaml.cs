@@ -1,8 +1,11 @@
+using DigitObliterator.ViewModels;
+
 namespace CalculatorDesktopApp.Views;
 
-public partial class HelpView : ContentPage
+public partial class HelpView : ContentPageBase
 {
-	public HelpView()
+	public HelpView(HelpViewModel viewModel)
+	    : base(viewModel)
 	{
 		InitializeComponent();
 	}

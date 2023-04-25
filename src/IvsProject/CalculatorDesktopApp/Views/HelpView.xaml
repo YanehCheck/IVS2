@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<views:ContentPageBase xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CalculatorDesktopApp.Views.HelpView">
+             xmlns:views="using:CalculatorDesktopApp.Views"
+             xmlns:viewModels="using:DigitObliterator.ViewModels"
+             x:Class="CalculatorDesktopApp.Views.HelpView"
+             x:DataType="viewModels:HelpViewModel">
 
-    <WebView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="https://www.stud.fit.vutbr.cz/~xcechm13/ICS/"/>
-</ContentPage>
+    <WebView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="{Binding HelpSource}"/>
+</views:ContentPageBase>

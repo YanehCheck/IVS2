@@ -52,6 +52,28 @@ namespace CalculatorDesktopApp.ViewModels
         /// <param name="messengerService"> Sending messages between ViewModels. </param>
         public MainPageViewModel(IMessengerService messengerService) : base(messengerService)
         {
+            if (Preferences.ContainsKey("theme"))
+            {
+                var themePreference = Preferences.Get("theme", "dark");
+                Settings.Theme = themePreference == "dark" ? ThemeModel.Dark : ThemeModel.Light;
+            }
+            else
+            {
+                Settings.Theme = ThemeModel.Dark;
+                Preferences.Set("theme", "dark");
+            }
+
+            if (Preferences.ContainsKey("decimalPlaces"))
+            {
+                var decimalPlacesPreference = Preferences.Get("decimalPlaces", "5");
+                Settings.DecimalPlaces = Convert.ToInt32(decimalPlacesPreference);
+            }
+            else
+            {
+                Settings.DecimalPlaces = 5;
+                Preferences.Set("theme", "5");
+            }
+
             Settings.DecimalPlaces = 5;
             Settings.Theme = ThemeModel.Dark;
             Calculator = new Calculator(Settings.DecimalPlaces);

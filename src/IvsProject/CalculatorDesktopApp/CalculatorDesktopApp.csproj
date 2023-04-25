@@ -58,10 +58,14 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Jua-Regular.ttf" />
+	  <None Remove="Resources\Images\icon.png" />
 	  <None Remove="Resources\Images\qm_black.png" />
 	  <None Remove="Resources\Images\qm_white.png" />
 	  <None Remove="Resources\Images\settings_black.png" />
 	  <None Remove="Resources\Images\settings_white.png" />
+	  <None Remove="Resources\Raw\dark.html" />
+	  <None Remove="Resources\Raw\Jua-Regular.woff" />
+	  <None Remove="Resources\Raw\light.html" />
 	</ItemGroup>
 
 	<ItemGroup>
