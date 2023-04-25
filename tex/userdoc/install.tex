@@ -1,0 +1,40 @@
+\section{Installation process}
+\subsection{Requirements}
+
+To ensure that the calculator works properly, it is recommended that you have the \textbf{.NET 7 Desktop Runtime} installed on your computer. You can download and install it from the Microsoft website.
+
+Please note that DigitObliterator is only guaranteed to work on the following operating systems:
+
+\begin{itemize}
+	\item Windows 11 64-bit
+	\item Windows 10 64-bit version 1941 or higher
+\end{itemize}
+
+If you have one of these operating systems, you should be able to run the calculator without any issues. However, if you have a different operating system or version, DigitObliterator may not work correctly.
+\subsection{Installation setup}
+To install the DigitObliterator, you first need to extract the installation files from an archive in which they may be located. Before starting the installation process, it is necessary to add the application certificate as a trusted one.
+
+ Follow steps included below:
+
+\begin{enumerate}
+	\item Right-click on the .msix file and choose Properties. The name of the file is as follows:
+	
+	\texttt{DigitObliterator\_[version]\_[isa].msix}
+	\item Select the Digital Signatures tab.
+	\item Choose the certificate then press Details.
+	\item In the Properties pane of the MSIX file with the Digital Signatures tab selected, select View Certificate.
+	\item Select Install Certificate....
+	\item Choose Local Machine then select Next.
+	\item If you're prompted by User Account Control to "Do you want to allow this app to make changes to your device?", select Yes.
+	\item In the Certificate Import Wizard window, select Place all certificates in the following store.
+	\item Select Browse... and then choose the Trusted People store. Select OK to close the dialog.
+	\item Certificate Import Wizard window is shown while selecting the Trusted People store.
+	\item Select Next and then Finish. You should see a dialog that says: "The import was successful."
+	\item Select OK on any window opened as part of this process, to close them all.
+\end{enumerate}
+
+\subsection{Installation}
+
+To install, run the previously mentioned \texttt{.msix} file and the installation wizard will guide you through the process. Once installation is complete, you should be able to find the application by searching for "DigitObliterator" in your Start menu.
+
+

@@ -179,8 +179,7 @@ namespace CalculatorDesktopApp.ViewModels
                 {
                     return "CE";
                 }
-                case KeyCode.VcEnter:
-                case KeyCode.VcNumPadEnter:
+                case KeyCode.VcLeftAlt:
                 {
                     return "=";
                 }

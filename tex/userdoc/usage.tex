@@ -1,0 +1,61 @@
+\section{Usage}
+\subsection{Introduction}
+Once the user is on the main screen of the calculator, he is presented with a set of buttons that include numbers, mathematical operators, functions and memory functions. \\
+
+For example, to perform a simple calculation, you can start by pressing the numbers you want to use, followed by the mathematical operator you want to apply, and then the next number. For example, to calculate 5 + 3, you would press the number 5, followed by the plus sign (+), and then the number 3.\\
+
+This calculator also has memory functions that allow you to store a number and retrieve it later. For instance, if you want to add 5 to a number that you previously stored in memory, you can recall that number by pressing the memory recall button, and then add 5 to it.
+
+\subsection{Operations}
+
+Please note that the calculator does not support IEEE 754 floating-point representations, such as NaN (Not a Number) and infinities. These features have been omitted from the calculator's functionality as they have been deemed inaccurate and confusing.
+
+\begin{itemize}
+	\item Plus (+): \\\\
+	Adds two numbers together.
+	\item Minus (-): \\\\
+	Subtracts the second number from the first number.
+	\item Multiply ($\times$): \\\\
+	Multiplies two numbers together.
+	\item Division ($\div$): \\\\
+	Divides the first number by the second number.\\
+	Raises an error when the second number is zero.
+	\item Factorial (!): \\\\
+	Calculates the factorial of a number, which is the product of all positive integers up to and including that number.\\
+	Raises an error when number is not natural.
+	\item Root ($\sqrt{\phantom{x}}$): \\\\
+	Calculates the square root of a number, which is a value that, when multiplied by itself, gives the original number. \\
+	The result must not be imaginary.
+	\item Power ($\wedge$): \\\\
+	Raises the first number to the power of the second number. \\
+	Raises an error when second number is not natural.
+	\item Modulo (\%): \\\\
+	Divides the first number by the second number and returns the remainder.\\
+	Raises an error when the second number is zero.
+	
+\end{itemize}
+
+\subsection{Memory functions}
+
+It is important to note that the calculator's memory functions work as a stack. This means that each time you use a memory function, the current value on the calculator's display is pushed onto the memory stack, and the memory value becomes the new current value. This stack-based memory functionality allows you to perform multiple memory operations in sequence.
+
+\begin{itemize}
+	\item Memory Store (MS): Stores the current value on the calculator's display in memory.
+	\item Memory Recall (MR): Recalls the value stored in the calculator's memory.
+	\item Memory Clear (MC): Clears the value stored in the calculator's memory.
+	\item Memory Add (M+): Adds the current value on the calculator's display to the value stored in memory.
+	\item Memory Subtract (M-): Subtracts the current value on the calculator's display from the value stored in memory.
+\end{itemize}
+
+\subsection{Keyboard controls}
+In addition to the traditional button interface, the calculator also supports keyboard controls. This can be particularly useful for users who prefer typing or for those who need to perform calculations quickly.
+
+\begin{itemize}
+	\item Numbers (0-9): Inputs a number
+	\item Left Alt: Calculates the expression
+	\item Basic Operations: Inputs an operation
+	\item Ctrl+C: Copies the result
+	\item F1-F5: Memory functions
+	\item Backspace: Deletes a character
+	\item Tab+Enter: Standard tab control
+\end{itemize}

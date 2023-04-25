@@ -1,0 +1,77 @@
+\section{Manual Installation}
+The application is built using MAUI that uses packaged compilation using MSIX.
+To change the the target to unpackaged application please follow the steps bellow.
+Note that unpackaged publishing is not officially supported and may result in unexpected behaviour.
+
+\subsection{Requirements}
+To compile your project in Visual Studio 2022, you will need the following:
+
+\begin{enumerate}
+	\item Windows operating system
+	\item Visual Studio 2022 installed on your machine
+	\item .NET 7 SDK
+	\item WinUI 3 SDK
+	\item MAUI Visual Studio extension installed
+	\item Microsoft Visual Studio Installer Projects extension installed
+	\item PowerShell installed on your machine
+	\item pki package installed in PowerShell
+	\item dotnet package installed in PowerShell
+\end{enumerate}
+
+\subsection{Unpackaged compilation}
+Add following lines to \textbf{CalculatorDesktopApp.csproj} file into the \textbf{PropertyGroup}~node:
+
+\begin{lstlisting}[language=XML]
+<WindowsPackageType>None</WindowsPackageType>
+<WindowsAppSDKSelfContained Condition="'$(IsUnpackaged)' == 'true'">true</WindowsAppSDKSelfContained>
+<SelfContained Condition="'$(IsUnpackaged)' == 'true'">true</SelfContained> 
+\end{lstlisting}
+~\\
+Change your \textbf{launchSettings.json} file to look like this:
+\newline
+\begin{lstlisting}[language=json]
+{
+	"profiles": {
+		"Windows Machine": {
+			"commandName":~"Project"
+		}
+	}
+}
+\end{lstlisting}
+~\\
+To build the application open \textbf{IvsProject.sln} file in Visual Studio 2022. Select the \textbf{CalculatorDesktopApp} project as startup project and click "Build".
+
+\subsection{Packaged compilation}
+
+\subsection*{Create a certificate}
+
+Open a PowerShell terminal and navigate to the directory with your project.
+\\\\
+Use the \textbf{New-SelfSignedCertificate} command to generate a self-signed certificate.
+\\
+The \textbf{PublisherName} value is displayed to the user when they install your app, supply your own value and omit the "()" characters. You can set the \textbf{Name} parameter to any string of text you want.
+
+\begin{lstlisting}[language=XML]
+New-SelfSignedCertificate -Type Custom -Subject "CN=(PublisherName)"
+-KeyUsage DigitalSignature
+-FriendlyName "Name"
+-CertStoreLocation "Cert:\CurrentUser\My" `
+-TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+\end{lstlisting}
+~\\
+Use the following PowerShell command to query the certificate store for the certificate that was created:
+
+\begin{lstlisting}[language=XML]
+Get-ChildItem "Cert:\CurrentUser\My" | Format-Table Subject, FriendlyName, Thumbprint
+\end{lstlisting}
+
+\subsection*{Compile and publish the application}
+
+Navigate to the folder with \textbf{CalculatorDesktopApp} project in PowerShell and use the following command to build the project. Replace "(cert)" with your certificate.
+\\\\
+\texttt{
+dotnet publish -f net7.0-windows10.0.19041.0 -c Release\\ -p:RuntimeIdentifierOverride=win10-x64 -p:PackageCertificateThumbprint=(cert)
+}
+\\
+You should find the path to the packaged application in the terminal path.
+
