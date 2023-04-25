@@ -63,7 +63,7 @@ Autoři
 No Risk, No Reward
 - xpomik01 - Jakub Pomikálek
 - xcechm13 - Roman Čechmánek
-- xsalon02 - [DOPLN JMENO]
+- xsalon02 - Christian Saloň
 - xjanec36 - Michael Janeček
 
 Licence
