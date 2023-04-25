@@ -13,6 +13,7 @@ Struktura repozitáře
 ---------
 <pre>
 .github/workflows           ; Github Actions  
+tex/                        ; Zdrojový kód dokumentace
 mockup/  
 plan/  
 resources/                  ; Obsahuje ikony  
@@ -45,7 +46,7 @@ Po správném sestavení zdrojového kódu je kalkulačka podporována na platfo
 Instalace
 ---------
 
-Kalkulačka vyžaduje mít nainstalovaný [.NET 7 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
+Kalkulačka může vyžadovat mít nainstalovaný [.NET 7 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/7.0).
 
 Pro provedení instalace kalkulačky je nutné nejprve extrahovat instalační soubory z případného archivu, ve kterém se nachází. 
 Před zahájením certifikace je nutno přidat certifikát jako důvěryhodný. Vizuální návod včetně přeložení můžete najít [zde](https://learn.microsoft.com/en-us/dotnet/maui/windows/deployment/publish-cli?view=net-maui-7.0).
