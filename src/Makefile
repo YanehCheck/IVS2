@@ -30,9 +30,7 @@ clean:
 
 help:
 	@echo CALCULATOR:
-	@echo Open src\IvsProject\IvsProject.sln in Visual Studio 2022.
-	@echo UI Framework - MAUI need to be installed.
-	@echo Open Solution Explorer, right click on CalculatorDesktopApp and build it.
+	@echo Follow steps in documentation.pdf section 3.1 and 3.2.
 	@echo PROFILER:
 	@echo Open src\IvsProject\IvsProject.sln in Visual Studio 2022.
 	@echo Open Solution Explorer, right click on Profiler and build it.
