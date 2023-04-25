@@ -19,10 +19,11 @@ pack:
 	mkdir xsalon02_xjanec36_xcechm13_xpomik01\doc
 	mkdir xsalon02_xjanec36_xcechm13_xpomik01\install
 	mkdir xsalon02_xjanec36_xcechm13_xpomik01\repo
-	for /d %%i in (..\*) do (if not "%%~nxi"=="src" xcopy /s /i /y "..\%%~nxi" "xsalon02_xjanec36_xcechm13_xpomik01\repo\%%~nxi")
+	for /d %%i in (..\*) do (if not "%%~nxi"=="src" xcopy /s /h /i /y "..\%%~nxi" "xsalon02_xjanec36_xcechm13_xpomik01\repo\%%~nxi")
 	for %%i in (..\*.*) do copy "%%i" "xsalon02_xjanec36_xcechm13_xpomik01\repo\"
-	for /d %%i in (.\*) do (if not "%%~nxi"=="xsalon02_xjanec36_xcechm13_xpomik01" xcopy /s /i /y ".\%%~nxi" "xsalon02_xjanec36_xcechm13_xpomik01\repo\src\%%~nxi")
+	for /d %%i in (.\*) do (if not "%%~nxi"=="xsalon02_xjanec36_xcechm13_xpomik01" xcopy /s /h /i /y ".\%%~nxi" "xsalon02_xjanec36_xcechm13_xpomik01\repo\src\%%~nxi")
 	for %%i in (.\*.*) do copy "%%i" "xsalon02_xjanec36_xcechm13_xpomik01\repo\src\"
+	xcopy /e /h /y /i ..\.git xsalon02_xjanec36_xcechm13_xpomik01\repo\.git
 
 clean:
 	for /d %%i in (IvsProject\*) do (if exist "%%i\bin" rd /s /q "%%i\bin")
