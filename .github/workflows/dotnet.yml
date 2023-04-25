@@ -31,7 +31,7 @@ jobs:
     - name: Build Calculator Model
       run: dotnet build --no-restore ./src/IvsProject/CalculatorModel/CalculatorModel.csproj
     - name: Build UI
-      run: dotnet build --no-restore ./src/IvsProject/CalculatorDesktopUI/CalculatorDesktopUI.csproj
+      run: dotnet build --no-restore ./src/IvsProject/CalculatorDesktopApp/CalculatorDesktopApp.csproj
     - name: Build Profiler
       run: dotnet build --no-restore ./src/IvsProject/Profiler/Profiler.csproj
     - name: Build Math Library Tests
