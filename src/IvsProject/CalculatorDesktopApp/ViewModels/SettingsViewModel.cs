@@ -77,12 +77,14 @@ namespace CalculatorDesktopApp.ViewModels
             {
                 ThemeModel = ThemeModel.Dark;
                 Settings.Theme = ThemeModel.Dark;
+                Preferences.Set("theme", "dark");
                 MessengerService.Send(new ThemeMessage());
             }
             else
             {
                 ThemeModel = ThemeModel.Light;
                 Settings.Theme = ThemeModel.Light;
+                Preferences.Set("theme", "light");
                 MessengerService.Send(new ThemeMessage());
             }
         }
@@ -93,6 +95,7 @@ namespace CalculatorDesktopApp.ViewModels
         private void ChangeDecimalPlaces()
         {
             Settings.DecimalPlaces = _decimalPlaces;
+            Preferences.Set("decimalPlaces", Convert.ToString(_decimalPlaces));
             MessengerService.Send(new DecimalPlacesMessage());
         }
     }

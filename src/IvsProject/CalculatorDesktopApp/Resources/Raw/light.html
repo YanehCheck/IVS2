@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <style type="text/css">
+        @font-face {
+            font-family: "Jua";
+            src: url("Jua-Regular.woff") format("truetype");
+        }
+
+        body {
+            margin: 15px;
+            margin-bottom: 30px;
+            background-color: #ebebeb;
+            font-family: 'Jua', sans-serif;
+        }
+
+        h2 {
+            margin: 0;
+            color: #000;
+            font-weight: 100;
+        }
+
+        p {
+            color: #282828;
+            font-weight: 100;
+            text-align: justify;
+        }
+
+        h3 {
+            color: #000;
+            font-weight: 100;
+            text-align: justify;
+        }
+
+        li {
+            color: #282828;
+        }
+
+        img {
+            align-self: center;
+            height: 30px;
+        }
+
+        .header {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+            align-items: center;
+        }
+
+        table {
+            border: 1px solid #000;
+            color: #282828;
+        }
+
+        .operations {
+            display: flex;
+            flex-direction: row;
+            column-gap: 20px;
+            align-items: center;
+        }
+
+        .operation_name {
+            margin: 0;
+            color: #000;
+        }
+
+        .operation_button {
+            margin: 0;
+            color: #000;
+            font-size: 2.2rem;
+        }
+
+        .operation_describtion {
+            margin: 0;
+        }
+
+        .line {
+            margin: 10px 0 10px 0;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://i.ibb.co/fxY2GD4/icon.png">
+        <h2>CALCULATOR USER MANUAL</h2>
+    </div>
+    <p>This calculator allows you to perform basic mathematical operations such as addition,
+         subtraction, multiplication, and division. Additionally, it provides functions
+          for calculating square roots, powers, factorials, and modulo. The calculator
+           also includes a stack that allows you to store and use results. You can 
+           use the keyboard to enter numbers and mathematical operations.</p>
+    <h3>OPERATIONS</h3>
+    <div class="operations">
+        <p class="operation_button">+</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Addition:</span>
+            <span>Enter numbers and use the "+" button. (5+2 = 7)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p class="operation_button">-</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Subtraction:</span>
+            <span>Enter numbers and use the "-" button. (5-2 = 3)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p class="operation_button">×</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Multiplication:</span>
+            <span>Enter numbers and use the "×" button. (3×2 = 6)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p class="operation_button">÷</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Division:</span>
+            <span>Enter numbers and use the "÷" button. (8÷4 = 2)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <h3>FUNCTIONS</h3>
+    <div class="operations">
+        <p style="font-size: 1.5rem;" class="operation_button">√</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Root:</span>
+            <span>Enter the index of the root and use the "√" button followed by the number that specifies the base of the root. (2√9 = 3)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="margin: 0 0 -20px 0;" class="operation_button">^</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Power:</span>
+            <span>Enter the number you want to raise and use the "^" button followed by the exponent. (2³ = 2^3 = 8)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="font-size: 1.5rem;" class="operation_button">%</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Modulo:</span>
+            <span>Calculates the remainder after division. Use the "%" symbol. (10%3 = 1)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="font-size: 1.8rem; margin-left: 5px; margin-right: 4px;" class="operation_button">!</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Factorial:</span>
+            <span>Enter a number and use the "!" button. (3! = 6)</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <h3>STACK</h3>
+    <div class="operations">
+        <p style="font-size: 1.8rem;" class="operation_button">MS</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Memory store:</span>
+            <span>Stores the current result on the stack.</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="font-size: 1.8rem;" class="operation_button">MR</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Memory read:</span>
+            <span>Uses the value at the top of the stack. If the stack is empty, the value 0 is used.</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="font-size: 1.8rem;" class="operation_button">MC</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Memory clear:</span>
+            <span>Deletes the value at the top of the stack.</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="font-size: 1.8rem;" class="operation_button">M+</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Memmory add:</span>
+            <span>Is used to add the value in the result to the value at the top of the stack.</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="operations">
+        <p style="font-size: 1.8rem;" class="operation_button">M-</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Memory substract:</span>
+            <span>Is used to subtract the value in the result from the value at the top of the stack.</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <h3>CLEARING</h3>
+    <div class="operations">
+        <p style="font-size: 1.8rem;" class="operation_button">CE</p>
+        <p class="operation_describtion">
+            <span class="operation_name">Clear entry:</span>
+            <span>Clears the last character.</span>
+        </p>
+    </div>
+    <div class="line"></div>
+    <h3>OTHER</h3>
+    <p>You can use parentheses to write more complex mathematical expressions. Use the "(" and ")" buttons to write parentheses.</p>
+    <p>In the upper left corner, there is a setting where you can switch between light and dark modes. You can also change the number of decimal places displayed in the settings.</p>
+</body>
+</html>
