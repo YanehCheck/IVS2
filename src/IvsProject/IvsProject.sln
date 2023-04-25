@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorConsoleUI", "Calc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorDesktopApp", "CalculatorDesktopApp\CalculatorDesktopApp.csproj", "{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProfilerSetup", "ProfilerSetup\ProfilerSetup.vdproj", "{ED1847D4-AFD1-4B4C-81C5-5EEBE4E5059B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}.Release|x86.ActiveCfg = Release|Any CPU
 		{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}.Release|x86.Build.0 = Release|Any CPU
 		{F5CBA232-8CCC-4B69-AB75-5B7D5FBF059E}.Release|x86.Deploy.0 = Release|Any CPU
+		{ED1847D4-AFD1-4B4C-81C5-5EEBE4E5059B}.Debug|Any CPU.ActiveCfg = Debug
+		{ED1847D4-AFD1-4B4C-81C5-5EEBE4E5059B}.Debug|x86.ActiveCfg = Debug
+		{ED1847D4-AFD1-4B4C-81C5-5EEBE4E5059B}.Release|Any CPU.ActiveCfg = Release
+		{ED1847D4-AFD1-4B4C-81C5-5EEBE4E5059B}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
